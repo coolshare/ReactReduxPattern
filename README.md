@@ -1,7 +1,7 @@
-React-Redux Starter Kit
+React-Redux Patterns
 ========================
 
-By Mark Qian 3/2017 (markqian@hotmail.com)
+By Mark Qian 6/2017 (markqian@hotmail.com)
 
 <b>A. The demo page:</b> 
 
@@ -9,7 +9,22 @@ http://coolshare.github.io/ReactReduxStarterKit/
 
 <b>B. Description:</b>
 
-This starter kit is designed to get you up and running as a comprehensive web application.
+This package is designed to get you up and running as a comprehensive web application.
+Another major goal of this package is to illustrate commonly used patterns in a React application.
+I will first focus on some of the patterns I introduced for my own used in my projects at work.
+Than I will list some commonly used ones.
+
+ - <b>Access store globally</b>. <br>
+   Problem: access to some store and store related methods from anywhere is not easy and using many store related 
+   methods as-is does not meet our need. For example, we need a dispatch with callback but the as-is dispatch of Redux store
+   does not provide that. We need a global access point to access store and store related methods.<br/><br/> 
+   Solution: Creating a singleton wrapper instance that can be accessed globally. It holds the reference of Redux store and the wrapper of 
+   store related methods that satisfies custom need. See code details at /services/CommunicationService.js. 
+   The CommunicationService will do a lot more that I will describe below. 
+  
+ - <b>Make dispatch callbackable</b>.  
+
+/**** here are some commonly used ones***/
 
  - <b>A general web UI layout</b>: 
  
@@ -18,10 +33,6 @@ This starter kit is designed to get you up and running as a comprehensive web ap
    3). accordions at the right side (in TabA) to provide management UI for different features<br />
    4). master/detail layout to provide an editing environment to handle collection data (Right pane in TabA)<br />
    5). other type of UI like map<br />  
- 
- - <b>Access store globally</b>. The store static field of global class holds the reference of Redux store so that
-   we can access the store and related method such as dispatch any where instead of pass the store down in the
-   component hierarchy. See code details at /services/CommunicationService.js
  
  - <b>React patterns</b>. the following patterns are used in the application
  
@@ -140,11 +151,11 @@ where id above is this.props.currentPage. What is good on this pattern? The bene
    or simply run the following<br/>
    
       cd c:\
-      git clone https://github.com/coolshare/ReactReduxStarterKit.git ReactReduxStarterKit<br/>
+      git clone https://github.com/coolshare/ReactReduxPatterns.git ReactReduxPatterns<br/>
       
 2. install environment
 
-      cd c:\ReactReduxStarterKit<br/>
+      cd c:\ReactReduxPatterns<br/>
       npm install
       
 3. run the application
