@@ -23,8 +23,7 @@ Then I will list some commonly used ones.
    ```cs.getStoreValue("MyReducer", "myVar")<br/>
       cs.dispatch({"type":"myType", ...});<br/>
       cs.subscribe("myType", handler);<br/>
-   ```<br/>where cs is 
-   ```
+      where cs is 
        import cs from './services/CommunicationManager'
    ```
    <br/>See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>. 
