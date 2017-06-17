@@ -1,8 +1,8 @@
 import React from 'react';
 import PatternsLeftPaneComponent from './PatternsLeftPaneComponent'
+import {connect} from 'react-redux'
 
-
-export default class PatternsLeftPaneContainer extends React.Component {
+class _PatternsLeftPaneContainer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.data = {
@@ -27,8 +27,17 @@ export default class PatternsLeftPaneContainer extends React.Component {
 	
 	render() {
 	    return (
-	      < PatternsLeftPaneComponent data={this.data}
+	      < PatternsLeftPaneComponent data={this.data} currentPage = {this.props.currentPage}
 	        /> 
 	    )
 	  }
 }
+const PatternsLeftPaneContainer = connect(
+		  store => {
+			  
+			    return {
+			    	currentPage: store.PatternsRightPaneReducer.currentPage
+			    };
+			  }
+			)(_PatternsLeftPaneContainer);
+export default PatternsLeftPaneContainer

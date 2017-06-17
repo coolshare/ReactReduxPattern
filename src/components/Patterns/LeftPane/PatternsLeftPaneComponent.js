@@ -11,7 +11,18 @@ export default class PatternsLeftPane extends React.Component {
     componentDidMount() {
         this.tree.loadData(this.props.data);
         // Select the first node
-        this.tree.selectNode(this.tree.getChildNodes()[0].getChildren()[0].getChildren()[0]);
+        if (this.props.currentPage) {
+        	var ch = this.tree.getChildNodes()[0].getChildren()[0].getChildren();
+        	for (let i=0; i<ch.length; i++) {
+        		var n = ch[i];
+        		if (n.name===this.props.currentPage) {
+        			this.tree.selectNode(n);
+        		}
+        	}
+        } else {
+        	this.tree.selectNode(this.tree.getChildNodes()[0].getChildren()[0].getChildren()[0]);
+        }
+        
     }
     render() {
 
@@ -71,10 +82,10 @@ export default class PatternsLeftPane extends React.Component {
                     }}
                     selectable={true}
                     shouldSelectNode={(node) => {
-                        if (!node || (node === this.tree.getSelectedNode())) {
-                            return false; // Prevent from deselecting the current node
+                        if (!node || (node.name === this.props.currentPage)) {
+                            return true; // Prevent from deselecting the current node
                         }
-                        return true;
+                        return false;
                     }}
                     onClick={(event) => {
                         // click event
