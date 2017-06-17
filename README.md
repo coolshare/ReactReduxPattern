@@ -19,7 +19,7 @@ Than I will list some commonly used ones.
    methods as-is does not meet our need. For example, we need a dispatch with callback but the as-is dispatch of Redux store
    does not provide that. We need a global access point to access store and store related methods.<br/><br/> 
    **Solution**: Creating a singleton wrapper instance that can be accessed globally. It holds the reference of Redux store and the wrapper of 
-   store related methods that satisfies custom need. See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>. 
+   store related methods that satisfies custom need. See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>. 
    The CommunicationService will do a lot more that I will describe below. 
   
  - <b>Make dispatch callbackable</b><br>
@@ -27,7 +27,7 @@ Than I will list some commonly used ones.
    of dispatching instead of somewhere else such as in a reducer.<br/><br/> 
    **Solution**: one key issue with this is that the callback has to be invoked after every handler including reduces and subscribers is done their jobs.
    So my approach is to trigger an asynchronous dispatch in a middleware and the asynchronous dispatching is picked up in the next round of event process in
-   a common reducer where the callback is invoked. See code details at /services/CommunicationService.js. 
+   a common reducer where the callback is invoked. See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a> and <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/CommonMiddleware.js">/components/CommonMiddleware.js</a>. 
    
 
 /**** here are some commonly used ones***/
