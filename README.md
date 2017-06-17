@@ -14,18 +14,18 @@ Another major goal of this package is to illustrate commonly used patterns in a 
 I will first focus on some of the patterns I introduced for my own used in my projects at work.
 Than I will list some commonly used ones.
 
- - <b>Access store globally</b>. <br>
-   ==Problem==: access to some store and store related methods from anywhere is not easy and using many store related 
+ - <b>Access store globally</b><br>
+   **Problem**: access to some store and store related methods from anywhere is not easy and using many store related 
    methods as-is does not meet our need. For example, we need a dispatch with callback but the as-is dispatch of Redux store
    does not provide that. We need a global access point to access store and store related methods.<br/><br/> 
-   ==Solution==: Creating a singleton wrapper instance that can be accessed globally. It holds the reference of Redux store and the wrapper of 
+   **Solution**: Creating a singleton wrapper instance that can be accessed globally. It holds the reference of Redux store and the wrapper of 
    store related methods that satisfies custom need. See code details at /services/CommunicationService.js. 
    The CommunicationService will do a lot more that I will describe below. 
   
- - <b>Make dispatch callbackable</b>.
-   ==Problem==: dispatch of Redux store does not allow callback. This is not convenient since you sometimes want to write the handler in the same place
+ - <b>Make dispatch callbackable</b><br>
+   **Problem**: dispatch of Redux store does not allow callback. This is not convenient since you sometimes want to write the handler in the same place
    of dispatching instead of somewhere else such as in a reducer.<br/><br/> 
-   ==Solution==: one key issue with this is that the callback has to be invoked after every handler including reduces and subscribers is done their jobs.
+   **Solution**: one key issue with this is that the callback has to be invoked after every handler including reduces and subscribers is done their jobs.
    So my approach is to trigger an asynchronous dispatch in a middleware and the asynchronous dispatching is picked up in the next round of event process in
    a common reducer where the callback is invoked.
    
