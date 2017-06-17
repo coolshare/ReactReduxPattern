@@ -71,10 +71,10 @@
   "main": "bundle.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coolshare/ReactReduxStarterKit.git"
+    "url": "git+https://github.com/coolshare/ReactReduxPattern.git"
   },
   "bugs": {
-    "url": "https://github.com/coolshare/ReactReduxStarterKit/issues"
+    "url": "https://github.com/coolshare/ReactReduxPattern/issues"
   },
-  "homepage": "https://github.com/coolshare/ReactReduxStarterKit#readme"
+  "homepage": "https://github.com/coolshare/ReactReduxPattern#readme"
 }

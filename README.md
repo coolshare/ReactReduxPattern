@@ -174,7 +174,7 @@ where id above is this.props.currentPage. What is good on this pattern? The bene
    
 <b>C. Instructions for installation</b>
 
-1. download the zip file of this package and unzip it to, say c:\ReactReduxStarterKit<br/>
+1. download the zip file of this package and unzip it to, say c:\ReactReduxPattern<br/>
    or simply run the following<br/>
    
       cd c:\
