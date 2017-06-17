@@ -59,11 +59,11 @@ Then I will list some commonly used ones.
    **Solution**: I wrote a wrapper, "subscribe" to hide the filtering within the wrapper. So you can simply subscribe as :<br/>
    ```
       cs.subscribe("myType", action=>{});
-   ```<br/>
+   ```
    Unsubscribe is also wrap so that you don't need to save the function reference return by subscribe. Just:
    ```
        cs.unsubscribe("myType");
-   ```<br/>
+   ```
     
    See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>;   
    
