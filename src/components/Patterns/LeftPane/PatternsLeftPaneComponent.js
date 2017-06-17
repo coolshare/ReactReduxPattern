@@ -83,10 +83,6 @@ export default class PatternsLeftPane extends React.Component {
                         var type = event.target.innerText;
                         if (type==="Popup Pattern") {
                         	cs.popup(HousingInfo, "HousingInfo");
-                        } else if (type==="Popup Pattern") {
-                        	//cs.popup(HousingInfo, "HousingInfo");
-                        } else if (type==="Popup Pattern") {
-                        	//cs.popup(HousingInfo, "HousingInfo");
                         } else {
                         	cs.dispatch({"type":"switchPatternPage", "id":type})
                         }

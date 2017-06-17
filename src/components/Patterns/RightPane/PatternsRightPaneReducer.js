@@ -19,7 +19,7 @@ const PatternsRightPaneReducer = (state = {'currentVideo':{'id':'YxqXoSkVaJk','d
         })
     case 'switchPatternPage':
   	  return Object.assign({}, state, {
-      	  currentTab: action.id
+  		currentPage: action.id
         })
     default:
       return state

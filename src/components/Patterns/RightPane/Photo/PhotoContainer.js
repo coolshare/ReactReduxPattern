@@ -17,9 +17,9 @@ class _PhotoContainer extends React.Component {
 	handleSearch(s) {
 		let self = this;
 		let search = s || this.props.photoSearch || "pet"
-		RemoteService.fetch(null, "photos", "https://pixabay.com/api/?key=5239248-c509b1ffda01e71efccc0caaa&per_page=200&q="+encodeURIComponent(search)).then(function(res) {
+		RemoteService.fetch("https://pixabay.com/api/?key=5239248-c509b1ffda01e71efccc0caaa&per_page=200&q="+encodeURIComponent(search), {"callback":(res)=> {
 			self.photos = [];
-			var hits = res.data.hits;
+			var hits = res.hits;
 			
 			for (var i=0; i<hits.length; i++) {
 				
@@ -27,7 +27,7 @@ class _PhotoContainer extends React.Component {
 			};
 			cs.dispatch({"type":"loadPhotos", "items":self.photos});
 			//self.showNext();
-		});
+		}});
 	}
 
 

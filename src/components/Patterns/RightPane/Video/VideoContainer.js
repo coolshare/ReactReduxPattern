@@ -34,9 +34,9 @@ class _VideoContainer extends React.Component {
 		if (token) {
 			url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&order="+od+"&key=%20AIzaSyBlfRGzLyvc1QXnaH_h4oXE6gkmtxluUe8&pageToken="+token;
 		}
-		RemoteService.fetch(null, "videos", url).then(function(res) {
+		RemoteService.fetch(url, {"callback":(res)=> {
 			self.videos = [];
-			var items = res.data.items;
+			var items = res.items;
 			self.nextPageToken = res.data.nextPageToken;
 			for (var i=0; i<items.length; i++) {
 				if (items[i].id.videoId==undefined) {
@@ -46,7 +46,7 @@ class _VideoContainer extends React.Component {
 			};
 			//cs.dispatch({"type":"loadVideos", "items":self.videos});
 			self.showNext(1);
-		});
+		}});
 	}
 	
 	showNext(d, t) {
