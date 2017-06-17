@@ -5,7 +5,7 @@ By Mark Qian 6/2017 (markqian@hotmail.com)
 
 <b>A. The demo page:</b> 
 
-http://coolshare.github.io/ReactReduxStarterKit/
+http://coolshare.github.io/ReactReduxPatterns/
 
 <b>B. Description:</b>
 
@@ -48,7 +48,7 @@ Than I will list some commonly used ones.
    **Problem**: In some case, you want to handle a dispatching in a variety of places/components instead of reducers, specially when the dispatching may not impact just
    state. But Redux never upates variables like LastAction when Redux can not find a reducer. So you can not even identify that a dispatching is sent to whom in a subscriber (listener) since the action is never saved anywhere.
  of action. <br/><br/> 
-   **Solution**: first I add a middleware to collect the action before all the listeners are invoked. In this way, you can handle a dispatched action anywhere out side reducer.
+   **Solution**: I add a middleware to collect the action before all the listeners are invoked and then use the collected action in the listeners. In this way, you can handle a dispatched action anywhere out side reducer.
    
       
 /**** here are some commonly used ones***/
