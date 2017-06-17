@@ -24,7 +24,7 @@ Than I will list some commonly used ones.
   
  - <b>Make dispatch callbackable</b>.
    ==Problem==: dispatch of Redux store does not allow callback. This is not convenient since you sometimes want to write the handler in the same place
-   of dispatching instead of somewhere else such as in a reducer.
+   of dispatching instead of somewhere else such as in a reducer.<br/><br/> 
    ==Solution==: one key issue with this is that the callback has to be invoked after every handler including reduces and subscribers is done their jobs.
    So my approach is to trigger an asynchronous dispatch in a middleware and the asynchronous dispatching is picked up in the next round of event process in
    a common reducer where the callback is invoked.
