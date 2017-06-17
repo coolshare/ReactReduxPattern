@@ -21,12 +21,6 @@ export default class PatternsLeftPaneContainer extends React.Component {
 			    	}, {
 			        id: 'Popup Pattern',
 			        name: 'Popup Pattern'
-			    },{
-			        id: 'Callback Pattern',
-			        name: 'Callback Pattern'
-			    },{
-			        id: 'Dispatch in Reducer Pattern',
-			        name: 'Dispatch in Reducer Pattern'
 			    }]
 			};
 	}
