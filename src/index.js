@@ -30,9 +30,9 @@ render(
 		</Route>
 		<Route path='/ReactReduxPattern/' component={TopContainer}>
 			<IndexRoute component={Login} />" +
-			<Route path='main' component={MainRouteContainer} />	
-			<Route path='Patterns' component={PatternsRouteContainer} />	
-			<Route path='popup' component={StackViewContainer} />	
+			<Route path='/ReactReduxStarterKit/main' component={MainRouteContainer} />	
+			<Route path='/ReactReduxStarterKit/Patterns' component={PatternsRouteContainer} />	
+			<Route path='/ReactReduxStarterKit/popup' component={StackViewContainer} />	
 		</Route>
 	</Router>
   </Provider>,
