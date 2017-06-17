@@ -20,7 +20,8 @@ Then I will list some commonly used ones.
    does not provide that. We need a global access point to access store and store related methods.<br/><br/> 
    **Solution**: Creating a singleton wrapper instance that can be accessed globally. It holds the reference of Redux store and the wrapper of 
    store related methods that satisfies custom need. Here is how to access store anywhere:<br/> 
-   ```import cs from './services/CommunicationManager';
+   
+   ```import cs from \\'./services/CommunicationManager\\';
    
       cs.getStoreValue("MyReducer", "myVar");
       cs.dispatch({"type":"myType", ...});
