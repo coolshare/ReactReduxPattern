@@ -32,7 +32,7 @@ class _Header extends React.Component{
 			      	<h3 style={{"margin":"3px"}}>React-Redux Starter Kit</h3>
 			      </Col>
 			      <Col xs={6} md={6}>
-			      	<div style={{"marginTop":"10px"}}>
+			      	<div style={{"marginTop":"10px", "color":"#000099"}}>
 			      		<span><a href="#" style={{'textCecoration': 'none'}} onClick={(evt) => this.handleLink('main', evt)} className={this.props.currentLink=="main"?"selectedTopLink":"unselectedTopLink"}>Main</a></span>
 			      		<span style={{"marginLeft":"40px"}}><a href="#" style={{'textDecoration': 'none'}} onClick={(evt) => this.handleLink('Patterns', evt)} className={this.props.currentLink=="Patterns"?"selectedTopLink":"unselectedTopLink"}>React Patterns</a></span>
 			      	</div>
