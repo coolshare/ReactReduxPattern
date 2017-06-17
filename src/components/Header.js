@@ -29,7 +29,7 @@ class _Header extends React.Component{
 			<Grid bsClass="gridContainer">
 				<Row className="show-grid">
 			      <Col xs={6} md={6}>
-			      	<h3 style={{"margin":"3px"}}>React-Redux Starter Kit</h3>
+			      	<h3 style={{"margin":"3px"}}>React-Redux Design Patterns</h3>
 			      </Col>
 			      <Col xs={6} md={6}>
 			      	<div style={{"marginTop":"10px", "color":"#000099"}}>
