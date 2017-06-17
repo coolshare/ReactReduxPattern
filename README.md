@@ -49,7 +49,9 @@ Then I will list some commonly used ones.
    return when "drilling down" or jumping around. In the running demo, try it out by clicking link "React Patterns" at the top and click at "Popup Patter" on the 
    left menu which links to an arbitrary component, "Housing Info". This "Housing Info" is "modal" since it hides everything behind but you do not feel it as
    a dialog. Next you can popup more by clicking "Trading Info" at the top-right. You can not go nowhere except clicking at "X" button to return. See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/StackViewContainer.js">/components/StackViewContainer.js</a>. Invocation is easy as
-   ```cs.popup(MyComponent, "MyComponent");
+   
+   ```
+       cs.popup(MyComponent, "MyComponent");
    ```<br/>
    
 - <b>Wrapper for Redux</b><br>
