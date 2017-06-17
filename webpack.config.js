@@ -13,7 +13,7 @@ var config = {
   output: {
     path: path.join(__dirname, '/'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/ReactReduxPattern'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
