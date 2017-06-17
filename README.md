@@ -11,7 +11,7 @@ http://coolshare.com/ReactReduxPattern
 
 This package is designed to get you up and running as a comprehensive web application.
 Another major goal of this package is to illustrate commonly used patterns in a React application.
-I will first focus on some of the patterns I introduced for my own used in my projects at work.
+I will first focus on some of the patterns I introduced for my own usage in my projects at work.
 Than I will list some commonly used ones.
 
  - <b>Access store globally</b><br>
