@@ -24,14 +24,14 @@ render(
 	  <Router history={browserHistory }>
 		<Route path='/ReactReduxPattern/' component={TopContainer}>
 			<IndexRoute component={Login} />" +
-			<Route path='/ReactReduxPattern/main' component={MainRouteContainer} />	
-			<Route path='/ReactReduxPattern/Patterns' component={PatternsRouteContainer} />
+			<Route path='main' component={MainRouteContainer} />	
+			<Route path='Patterns' component={PatternsRouteContainer} />
 			<Route path='popup' component={StackViewContainer} />		
 		</Route>
 		<Route path='/' component={TopContainer}>
 			<IndexRoute component={Login} />" +
-			<Route path='/main' component={MainRouteContainer} />	
-			<Route path='/Patterns' component={PatternsRouteContainer} />	
+			<Route path='main' component={MainRouteContainer} />	
+			<Route path='Patterns' component={PatternsRouteContainer} />	
 			<Route path='popup' component={StackViewContainer} />	
 		</Route>
 	</Router>
