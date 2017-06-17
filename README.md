@@ -37,12 +37,12 @@ Then I will list some commonly used ones.
    **Solution**: one key issue with this is that the callback has to be invoked after every handler including reduces and subscribers is done their jobs.
    So my approach is to trigger an asynchronous dispatch in a middleware and the asynchronous dispatching is picked up in the next round of event process in
    a common reducer where the callback is invoked. Here is the way to use it:<br/>
-        ```
+```
           cs.dispatch({"MyType", "data":"mydata"}, action=> {
         	//handle callback here
         })
         
-        ```<br/>
+ ```
    See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a> and <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/CommonMiddleware.js">/components/CommonMiddleware.js</a>. 
    
  - <b>Popup Stack</b><br>
