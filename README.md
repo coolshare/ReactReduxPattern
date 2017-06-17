@@ -19,7 +19,15 @@ Then I will list some commonly used ones.
    methods as-is does not meet our need. For example, we need a dispatch with callback but the as-is dispatch of Redux store
    does not provide that. We need a global access point to access store and store related methods.<br/><br/> 
    **Solution**: Creating a singleton wrapper instance that can be accessed globally. It holds the reference of Redux store and the wrapper of 
-   store related methods that satisfies custom need. See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>. 
+   store related methods that satisfies custom need. Here is how to access store anywhere:<br/> 
+   ```cs.getStoreValue("MyReducer", "myVar")<br/>
+      cs.dispatch({"type":"myType", ...});<br/>
+      cs.subscribe("myType", handler);<br/>
+   ```<br/>where cs is 
+   ```
+       import cs from './services/CommunicationManager'
+   ```
+   <br/>See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>. 
    The CommunicationService will do a lot more that I will describe below. 
   
  - <b>Make dispatch callbackable</b><br>
@@ -30,7 +38,7 @@ Then I will list some commonly used ones.
    a common reducer where the callback is invoked. Here is the way to use it:<br/>
         ```cs.dispatch({"MyType", "data":"mydata"}, function(action) {
         	//handle callback here
-        }```
+        }```<br/>
    See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a> and <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/CommonMiddleware.js">/components/CommonMiddleware.js</a>. 
    
  - <b>Popup Stack</b><br>
@@ -39,14 +47,24 @@ Then I will list some commonly used ones.
    **Solution**: I built a component/container, "StackViewContainer". It keeps all level of the stack "modal" so that users have to close all the popups to
    return when "drilling down" or jumping around. In the running demo, try it out by clicking link "React Patterns" at the top and click at "Popup Patter" on the 
    left menu which links to an arbitrary component, "Housing Info". This "Housing Info" is "modal" since it hides everything behind but you do not feel it as
-   a dialog. Next you can popup more by clicking "Trading Info" at the top-right. You can not go nowhere except clicking at "X" button to return. See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/StackViewContainer.js">/components/StackViewContainer.js</a>. Invokation is easy as
-   cs.popup(MyComponent, "MyComponent");
+   a dialog. Next you can popup more by clicking "Trading Info" at the top-right. You can not go nowhere except clicking at "X" button to return. See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/StackViewContainer.js">/components/StackViewContainer.js</a>. Invocation is easy as
+   ```cs.popup(MyComponent, "MyComponent");
+   ```<br/>
    
 - <b>Wrapper for Redux</b><br>
    **Problem**: Redux does a simple pub/sub. All the reducers and subscribers will be invoke for any dispatching (This is really not efficient at all. I am wondering
    why they don't use type to map the listeners so that not all the listeners are called for each single action dispatching). 
    So you have to place if statement in all the subscribers to only let the corresponding invocation through.
-   **Solution**: I wrote a wrapper, "subscribe" to hide the filtering within the wrapper. See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>;   
+   **Solution**: I wrote a wrapper, "subscribe" to hide the filtering within the wrapper. So you can simply subscribe as :<br/>
+   ```
+      cs.subscribe("myType", (action)=>{});
+   ```<br/>
+   Unsubscribe is also wrap so that you don't need to save the function reference return by subscribe. Just:
+   ```
+       cs.unsubscribe("myType");
+   ```<br/>
+    
+   See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>;   
    
 - <b>Pub/sub Pattern</b><br>
    **Problem**: In some case, you want to handle a dispatching in a variety of places/components instead of reducers, specially when the dispatching may not impact just
