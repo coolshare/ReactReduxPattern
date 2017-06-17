@@ -12,7 +12,7 @@ http://coolshare.com/ReactReduxPattern
 This package is designed to get you up and running as a comprehensive web application.
 Another major goal of this package is to illustrate commonly used patterns in a React application.
 I will first focus on some of the patterns I introduced for my own usage in my projects at work.
-Than I will list some commonly used ones.
+Then I will list some commonly used ones.
 
  - <b>Access store globally</b><br>
    **Problem**: access to some store and store related methods from anywhere is not easy and using many store related 
@@ -41,7 +41,7 @@ Than I will list some commonly used ones.
 - <b>Wrapper for Redux</b><br>
    **Problem**: Redux does a simple pub/sub. All the reducers and subscribers will be invoke for any dispatching (This is really not efficient at all. I am wondering
    why they don't use type to map the listeners so that not all the listeners are called for each single action dispatching). 
-   So you have to place if statement in all the subscribers to only let the corresponding invocation through.
+   So you have to place if statement in all the subscribers to only let the corresponding invocation through.</b><br>
    **Solution**: I wrote a wrapper, "subscribe" to hide the filtering within the wrapper. See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>;   
    
 - <b>Pub/sub Pattern</b><br>
