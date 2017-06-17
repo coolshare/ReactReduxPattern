@@ -5,7 +5,7 @@ By Mark Qian 6/2017 (markqian@hotmail.com)
 
 <b>A. The demo page:</b> 
 
-http://coolshare.github.io/ReactReduxPattern
+http://coolshare.com/ReactReduxPattern
 
 <b>B. Description:</b>
 
@@ -178,11 +178,11 @@ where id above is this.props.currentPage. What is good on this pattern? The bene
    or simply run the following<br/>
    
       cd c:\
-      git clone https://github.com/coolshare/ReactReduxPatterns.git ReactReduxPatterns<br/>
+      git clone https://github.com/coolshare/ReactReduxPattern.git ReactReduxPattern<br/>
       
 2. install environment
 
-      cd c:\ReactReduxPatterns<br/>
+      cd c:\ReactReduxPattern<br/>
       npm install
       
 3. run the application
