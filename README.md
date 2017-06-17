@@ -41,7 +41,7 @@ Then I will list some commonly used ones.
 - <b>Wrapper for Redux</b><br>
    **Problem**: Redux does a simple pub/sub. All the reducers and subscribers will be invoke for any dispatching (This is really not efficient at all. I am wondering
    why they don't use type to map the listeners so that not all the listeners are called for each single action dispatching). 
-   So you have to place if statement in all the subscribers to only let the corresponding invocation through.</b><br>
+   So you have to place if statement in all the subscribers to only let the corresponding invocation through.
    **Solution**: I wrote a wrapper, "subscribe" to hide the filtering within the wrapper. See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>;   
    
 - <b>Pub/sub Pattern</b><br>
@@ -53,14 +53,7 @@ Then I will list some commonly used ones.
       
 /**** here are some commonly used ones***/
 
- - <b>A general web UI layout</b>: 
- 
-   1). top links to divide business concept into multiple area ("Main" and "Second")<br />
-   2). tabs to further divide an area into sub areas<br />
-   3). accordions at the right side (in TabA) to provide management UI for different features<br />
-   4). master/detail layout to provide an editing environment to handle collection data (Right pane in TabA)<br />
-   5). other type of UI like map<br />  
- 
+
  - <b>React patterns</b>. the following patterns are used in the application
  
    1). *Container/Component*. It is used under /components/Patterns: all the components are written with this pattern.<br/>
