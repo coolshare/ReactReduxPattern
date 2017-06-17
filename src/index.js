@@ -22,12 +22,6 @@ cs.init(store);
 render(
   <Provider store={store}>
 	  <Router history={browserHistory }>
-		<Route path='/ReactReduxPattern/' component={TopContainer}>
-			<IndexRoute component={Login} />" +
-			<Route path='main' component={MainRouteContainer} />	
-			<Route path='Patterns' component={PatternsRouteContainer} />
-			<Route path='popup' component={StackViewContainer} />		
-		</Route>
 		<Route path='/' component={TopContainer}>
 			<IndexRoute component={Login} />" +
 			<Route path='main' component={MainRouteContainer} />	
