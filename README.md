@@ -31,10 +31,9 @@ Than I will list some commonly used ones.
    
  - <b>Popup Stack</b><br>
    **Problem**: In your application, in many case to achieve a better user experience, you need to allow users to jump into another point in the component 
-   hierarchy. If you simply route (deep linking programmatically or allow user to jump by clicking in some case) to the point you may lost the current stay 
-   r the use may totally get lost after they finish the job in current stack level. So you need a state "Stack" <br/><br/> 
+   hierarchy. If you simply route (deep linking programmatically or allow user to jump by clicking in some case) to the point you may lost the current stay. The use may totally get lost after they finish the job in current stack level. So you need a state "Stack" <br/><br/> 
    **Solution**: I built a component/container, "StackViewContainer". It keeps all level of the stack "modal" so that users have to close all the popups to
-   return when "drilling down" or jumping around. In the running demo, try it by clicking link "React Patterns" at the top and click at "Popup Patter" on the 
+   return when "drilling down" or jumping around. In the running demo, try it out by clicking link "React Patterns" at the top and click at "Popup Patter" on the 
    left menu which links to an arbitrary component, "Housing Info". This "Housing Info" is "modal" since it hides everything behind but you do not feel it as
    a dialog. Next you can popup more by clicking "Trading Info" at the top-right. You can not go nowhere except clicking at "X" button to return. See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/StackViewContainer.js">/components/StackViewContainer.js</a>. Invokation is easy as
    cs.popup(MyComponent, "MyComponent");
