@@ -38,6 +38,19 @@ Than I will list some commonly used ones.
    a dialog. Next you can popup more by clicking "Trading Info" at the top-right. You can not go nowhere except clicking at "X" button to return. See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/StackViewContainer.js">/components/StackViewContainer.js</a>. Invokation is easy as
    cs.popup(MyComponent, "MyComponent");
    
+- <b>Wrapper for Redux</b><br>
+   **Problem**: Redux does a simple pub/sub. All the reducers and subscribers will be invoke for any dispatching (This is really not efficient at all. I am wondering
+   why they don't use type to map the listeners so that not all the listeners are called for each single action dispatching). 
+   So you have to place if statement in all the subscribers to only let the corresponding invocation through.
+   **Solution**: I wrote a wrapper, "subscribe" to hide the filtering within the wrapper. See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>;   
+   
+- <b>Pub/sub Pattern</b><br>
+   **Problem**: In some case, you want to handle a dispatching in a variety of places/components instead of reducers, specially when the dispatching may not impact just
+   state. But Redux never upates variables like LastAction when Redux can not find a reducer. So you can not even identify that a dispatching is sent to whom in a subscriber (listener) since the action is never saved anywhere.
+ of action. <br/><br/> 
+   **Solution**: first I add a middleware to collect the action before all the listeners are invoked. In this way, you can handle a dispatched action anywhere out side reducer.
+   
+      
 /**** here are some commonly used ones***/
 
  - <b>A general web UI layout</b>: 

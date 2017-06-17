@@ -25,7 +25,6 @@ class CommunicationService {
 		var self = this;
 		//tracking subscribed type		 		
 		this.subscribeMap[type] = this.store.subscribe(()=>{
-			//let lastAction = self.getLastAction();
 			//We filter by type so that we won't call the handle when type is not match
 			if (cs.currentAction.type===type) {
 				if (owner){
@@ -97,9 +96,7 @@ class CommunicationService {
 		}
 		return false;
 	}
-	getLastAction() {
-		return this.store.getState().LastAction;
-	}
+
 	getStoreValue(key, subKey) {
 		if (key===undefined) {
 			return this.store.getState();
