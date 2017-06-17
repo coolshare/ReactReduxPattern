@@ -25,19 +25,20 @@ class _MainContainer extends React.Component{
 			<div id="MainContainer">	
 				<Tabs onSelect={this.handleSelect} selectedIndex={this.props.currentTab}>				
 					<TabList>
+					  <Tab>All About Patterns</Tab>
 			          <Tab>Form/Table</Tab>
-			          <Tab>Maps</Tab>
-			          <Tab>Others</Tab>
+			          <Tab>Maps</Tab>			          
 			        </TabList>
+			        <TabPanel>
+			          <AboutPattern/>
+			        </TabPanel>
 			        <TabPanel>
 			        	<FormTableContainer/>
 			        </TabPanel>
 			        <TabPanel>
 			        	<MapContainer/>
 			        </TabPanel>
-			        <TabPanel>
-			          <AboutPattern/>
-			        </TabPanel>
+			        
 				</Tabs>
 				<Footer/>
       		</div>
