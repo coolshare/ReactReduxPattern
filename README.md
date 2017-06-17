@@ -5,7 +5,7 @@ By Mark Qian 6/2017 (markqian@hotmail.com)
 
 <b>A. The demo page:</b> 
 
-http://coolshare.github.io/ReactReduxPatterns/
+http://coolshare.github.io/ReactReduxPattern/
 
 <b>B. Description:</b>
 
