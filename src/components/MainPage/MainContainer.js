@@ -6,6 +6,7 @@ import FormTableContainer from './FormTable/FormTableContainer';
 import GoogleMapContainer from './Maps/GoogleMap/GoogleMapContainer';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import MapContainer from './Maps/MapContainer'
+import AboutPattern from './AboutPattern'
 
 /**
 *
@@ -35,7 +36,7 @@ class _MainContainer extends React.Component{
 			        	<MapContainer/>
 			        </TabPanel>
 			        <TabPanel>
-			          <h4>Under construction</h4>
+			          <AboutPattern/>
 			        </TabPanel>
 				</Tabs>
 				<Footer/>

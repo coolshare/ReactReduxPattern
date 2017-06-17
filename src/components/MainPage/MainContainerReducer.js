@@ -4,6 +4,10 @@ const MainContainerReducer = (state = {'currentTab':0}, action) => {
       return Object.assign({}, state, {
     	  currentTab: action.tabId
       })
+    case 'loadAboutPatter':
+        return Object.assign({}, state, {
+      	  aboutPattern: action.data
+        })
     default:
       return state
   }

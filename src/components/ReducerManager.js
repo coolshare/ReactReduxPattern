@@ -8,6 +8,7 @@ import TopLinkReducer from './TopLinkReducer'
 import MapContainerReducer from './MainPage/Maps/MapContainerReducer'
 import GoogleMapReducer from './MainPage/Maps/GoogleMap/GoogleMapReducer'
 import PatternsRightPaneReducer from './Patterns/RightPane/PatternsRightPaneReducer'
+import CommonReducer from './CommonReducer'
 const ReducerManager = combineReducers({
   TodoReducer,
   MainRightPaneReducer,
@@ -17,7 +18,8 @@ const ReducerManager = combineReducers({
   TradingReducer,
   MapContainerReducer,
   GoogleMapReducer,
-  PatternsRightPaneReducer
+  PatternsRightPaneReducer,
+  CommonReducer
 })
 
 export default ReducerManager

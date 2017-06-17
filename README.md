@@ -28,7 +28,7 @@ Then I will list some commonly used ones.
       cs.dispatch({"type":"myType", ...});
       cs.subscribe("myType", handler);     
    ```
-   <br/>See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>. 
+   <br/>See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>. 
    The CommunicationService will do a lot more that I will describe below. 
   
  - <b>Dispatch with callback</b><br>
@@ -43,7 +43,7 @@ Then I will list some commonly used ones.
         })
         
  ```
-   See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a> and <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/CommonMiddleware.js">/components/CommonMiddleware.js</a>. 
+   See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a> and <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/CommonMiddleware.js">/components/CommonMiddleware.js</a>. 
    
  - <b>Popup Stack</b><br>
    **Problem**: In your application, in many case to achieve a better user experience, you need to allow users to jump into another point in the component 
@@ -51,7 +51,7 @@ Then I will list some commonly used ones.
    **Solution**: I built a component/container, "StackViewContainer". It keeps all level of the stack "modal" so that users have to close all the popups to
    return when "drilling down" or jumping around. In the running demo, try it out by clicking link "React Patterns" at the top and click at "Popup Patter" on the 
    left menu which links to an arbitrary component, "Housing Info". This "Housing Info" is "modal" since it hides everything behind but you do not feel it as
-   a dialog. Next you can popup more by clicking "Trading Info" at the top-right. You can not go nowhere except clicking at "X" button to return. See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/StackViewContainer.js">/components/StackViewContainer.js</a>. Invocation is easy as
+   a dialog. Next you can popup more by clicking "Trading Info" at the top-right. You can not go nowhere except clicking at "X" button to return. See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/StackViewContainer.js">/components/StackViewContainer.js</a>. Invocation is easy as
    
    ```
        cs.popup(MyComponent, "MyComponent");
@@ -70,7 +70,7 @@ Then I will list some commonly used ones.
        cs.unsubscribe("myType");
    ```
     
-   See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>;   
+   See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>;   
    
 - <b>Pub/sub Pattern</b><br>
    **Problem**: In some case, you want to handle a dispatching in a variety of places/components instead of reducers, specially when the dispatching may not impact just

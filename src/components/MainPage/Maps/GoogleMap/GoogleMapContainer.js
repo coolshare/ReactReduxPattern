@@ -30,9 +30,7 @@ class _GoogleMapContainer extends React.Component {
 
 	  componentDidMount() {
 		  var self = this;
-		  let request = axios.get("https://transit.land/api/v1/routes?operated_by=o-9q8y-sfmta").then(function(res){
-			  cs.store.dispatch({'type':'GoogleMap', 'busRoutes':res.data.routes});
-		  });
+		  let request = axios.get("https://transit.land/api/v1/routes?operated_by=o-9q8y-sfmta").then(res=> cs.store.dispatch({'type':'GoogleMap', 'busRoutes':res.data.routes}));
 	  }
 
 	  render() {
@@ -52,7 +50,7 @@ class _GoogleMapContainer extends React.Component {
 			        key: "AIzaSyAUp0ZkrQq-k_9jBYgqJEsUebHhduH9Ttw"
 			      }}>
 			       {
-			    	   self.props.busRoutes.map( function (route, idx) {
+			    	   self.props.busRoutes.map( (route, idx) =>{
 			    		    var latlng = route.geometry.coordinates[0][0]
 	                        return (
 	                        		<Marker key={idx} lat={latlng[1]} lng={latlng[0]} text={route.stops_served_by_route[0].stop_name} route={route}/>

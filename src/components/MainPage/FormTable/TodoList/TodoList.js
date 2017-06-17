@@ -25,7 +25,7 @@ class _TodoList extends React.Component{
 	componentWillMount () {
 	    this.count = 0;
 	    var self = this;
-	    this.addTODO = function() {
+	    this.addTODO = ()=> {
 			cs.store.dispatch({"id":(++self.count), "type":"ADD_TODO", "text":$("#textInput").val(), "completed":false});
 			$("#textInput").val("")
 			self.setState({'enableAdd':false});

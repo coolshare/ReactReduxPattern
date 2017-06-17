@@ -4,7 +4,7 @@ import cs from './CommunicationService'
 function _RemoteService(){
 	this.fetch = (url, options, key, result, requests, len) => {
 		let self = this;
-		return axios.get(url).then(function(res){
+		return axios.get(url).then(res=>{
 			  if (res.status >= 400) {
 		          throw new Error("Bad response from server");
 		      }

@@ -21,10 +21,7 @@ class _HousingInfo extends React.Component{
 	      { key: 'value', name: 'Value', resizable: true },
 	      { key: 'link', name: 'Link', resizable: true} ];
 		this.rowGetter = this.rowGetter.bind(this);
-		cs.registerGlobal("housingJSONPCallback", function(data){
-			cs.dispatch({"type":"LoadHousing", "data":data.properties.comparables});
-		});
-		
+		cs.registerGlobal("housingJSONPCallback", data=>cs.dispatch({"type":"LoadHousing", "data":data.properties.comparables}));		
 	}
 	handleTrading() {
 		cs.popup(TradingInfo, "TradingInfo");
@@ -41,8 +38,8 @@ class _HousingInfo extends React.Component{
 	        dataType: "jsonp",
 	        crossDomain: true,
 	        jsonpCallback:'aaa',//<<<
-	        success: function() { console.log("success"); }, 
-	        error: function() { console.log("error"); } 
+	        success: ()=>console.log("success") , 
+	        error: ()=>console.log("error")  
 	    });
 	 }
 

@@ -23,10 +23,8 @@ class _TradingInfo extends React.Component{
 	      { key: 'utctime', name: 'UTC Time', resizable: true},
 	      { key: 'volume', name: 'Volume', resizable: true}];
 		this.rowGetter = this.rowGetter.bind(this);
-		cs.registerGlobal("tradingJSONPCallback", function(data){
-			cs.dispatch({"type":"LoadTrading", "data":data.list.resources});
-		});
-		
+		cs.registerGlobal("tradingJSONPCallback", data=>cs.dispatch({"type":"LoadTrading", "data":data.list.resources}));
+	
 	}
 
 	rowGetter(i) {
@@ -40,8 +38,8 @@ class _TradingInfo extends React.Component{
 	        dataType: "jsonp",
 	        crossDomain: true,
 	        jsonpCallback:'aaa',//<<<
-	        success: function() { console.log("success"); }, 
-	        error: function() { console.log("error"); } 
+	        success: () => console.log("success"), 
+	        error: () => console.log("error")
 	    });
 	 }
 
