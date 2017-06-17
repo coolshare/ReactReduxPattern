@@ -28,6 +28,12 @@ render(
 			<Route path='Patterns' component={PatternsRouteContainer} />	
 			<Route path='popup' component={StackViewContainer} />	
 		</Route>
+		<Route path='/' component={TopContainer}>
+			<IndexRoute component={Login} />" +
+			<Route path='ReactReduxPattern/main' component={MainRouteContainer} />	
+			<Route path='ReactReduxPattern/Patterns' component={PatternsRouteContainer} />	
+			<Route path='ReactReduxPattern/popup' component={StackViewContainer} />	
+		</Route>
 	</Router>
   </Provider>,
   document.getElementById('root')
