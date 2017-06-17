@@ -31,7 +31,7 @@ Then I will list some commonly used ones.
    <br/>See code details at <a href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>. 
    The CommunicationService will do a lot more that I will describe below. 
   
- - <b>Make dispatch callbackable</b><br>
+ - <b>Dispatch with callback</b><br>
    **Problem**: dispatch of Redux store does not allow callback. This is not convenient since you sometimes want to write the handler in the same place
    of dispatching instead of somewhere else such as in a reducer.<br/><br/> 
    **Solution**: one key issue with this is that the callback has to be invoked after every handler including reduces and subscribers is done their jobs.
