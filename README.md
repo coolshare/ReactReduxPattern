@@ -52,7 +52,7 @@ Then I will list some commonly used ones.
    
    ```
        cs.popup(MyComponent, "MyComponent");
-   ```<br/>
+   ```
    
 - <b>Wrapper for Redux</b><br>
    **Problem**: Redux does a simple pub/sub. All the reducers and subscribers will be invoke for any dispatching (This is really not efficient at all. I am wondering
