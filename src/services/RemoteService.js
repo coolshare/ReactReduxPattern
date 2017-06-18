@@ -2,6 +2,9 @@ import axios from 'axios'
 import cs from './CommunicationService'
 
 function _RemoteService(){
+	this.fatchThroughProxy = (url, options, key, result, requests, len) => {
+		this.fetch("http://73.71.159.185:8888?url="+url, options, key, result, requests, len)
+	};
 	this.fetch = (url, options, key, result, requests, len) => {
 		let self = this;
 		return axios.get(url).then(res=>{

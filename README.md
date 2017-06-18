@@ -15,8 +15,9 @@ I will first focus on some of the patterns I introduced for my own usage in my p
 Then I will list some commonly used ones.
 
  - <b>Access store globally</b><br>
-   **Problem**: access to some store and store related methods from anywhere is not easy and using many store related 
-   methods as-is does not meet our need. For example, we need a dispatch with callback but the as-is dispatch of Redux store
+   **Problem**: when render in the client (in case render at server, it won't work since there is different store instance per request on server),
+   access to some store and store related methods from anywhere is not easy and using many store related methods as-is does not meet our need. 
+   For example, we need a dispatch with callback but the as-is dispatch of Redux store
    does not provide that. We need a global access point to access store and store related methods.<br/><br/> 
    **Solution**: Creating a singleton wrapper instance that can be accessed globally. It holds the reference of Redux store and the wrapper of 
    store related methods that satisfies custom need. Here is how to access store anywhere:<br/> 
