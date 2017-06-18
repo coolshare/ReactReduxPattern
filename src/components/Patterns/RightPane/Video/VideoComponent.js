@@ -60,6 +60,9 @@ export default class VideoComponent extends React.Component{
 			        autoplay: 1
 			      }
 		  };
+		  if (this.props.currentVideo===undefined) {
+			  return null
+		  }
 	    return (
 	      <div>
 		     <div style={{"margin":"5px"}}>
