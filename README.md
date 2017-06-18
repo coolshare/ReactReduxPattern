@@ -15,10 +15,10 @@ I will first focus on some of the patterns I introduced for my own usage in my p
 Then I will list some commonly used ones.
 
  - <b>Access store globally</b><br>
-   **Problem**: Access to the store and store related methods from anywhere is not easy and using many store related methods as-is does not meet our need. 
+   <b>Problem</b>: Access to the store and store related methods from anywhere is not easy and using many store related methods as-is does not meet our need. 
    For example, we need a dispatch with callback but the as-is dispatch of Redux store
    does not provide that. We need a global access point to access store and store related methods.<br/><br/> 
-   **Solution**: Creating a singleton wrapper instance that can be accessed globally. It holds the reference of Redux store and the wrapper of 
+   <b>Solution</b>: Creating a singleton wrapper instance that can be accessed globally. It holds the reference of Redux store and the wrapper of 
    store related methods that satisfies custom need. Here is how to access store anywhere:<br/> 
    
    ```
@@ -32,9 +32,9 @@ Then I will list some commonly used ones.
    The CommunicationService will do a lot more that I will describe below. 
   
  - <b>Dispatch with callback</b><br>
-   **Problem**: dispatch of Redux store does not allow callback. This is not convenient since you sometimes want to write the handler in the same place
+   <b>Problem</b>: dispatch of Redux store does not allow callback. This is not convenient since you sometimes want to write the handler in the same place
    of dispatching instead of somewhere else such as in a reducer.<br/><br/> 
-   **Solution**: one key issue with this is that the callback has to be invoked after every handler including reduces and subscribers is done their jobs.
+   <b>Solution</b>: one key issue with this is that the callback has to be invoked after every handler including reduces and subscribers is done their jobs.
    So my approach is to trigger an asynchronous dispatch in a middleware and the asynchronous dispatching is picked up in the next round of event process in
    a common reducer where the callback is invoked. Here is the way to use it:<br/>
 ```
@@ -46,12 +46,12 @@ Then I will list some commonly used ones.
    See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>,  <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/CommonReducer.js">/components/CommonReducer.js</a> and <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/CommonMiddleware.js">/components/CommonMiddleware.js</a>. 
    
  - <b>Popup Stack</b><br>
-   **Problem**: In your application, in many case to achieve a better user experience, you need to allow users to jump into another point in the component 
+   <b>Problem</b>: In your application, in many case to achieve a better user experience, you need to allow users to jump into another point in the component 
    hierarchy. If you simply route (deep linking programmatically or allow user to jump by clicking in some case) to the point you may lost the current stay. 
    The use may totally get lost after they finish the job in current stack level. So you need a state "Stack". Another issue you face is that if what you popup is an
    general component, there could be another "short-cut" link/button pointing to another component. You better not use modal dialog since it may result multi-level 
    modal dialogs, a bad UI behave.<br/><br/> 
-   **Solution**: I built a component/container, "StackViewContainer". It keeps all level of the stack "modal" so that users have to close all the popups to
+   <b>Solution</b>: I built a component/container, "StackViewContainer". It keeps all level of the stack "modal" so that users have to close all the popups to
    return when "drilling down" or jumping around. In the running demo, try it out by clicking link "React Patterns" at the top and click at "Popup Pattern" on the 
    left menu which links to an arbitrary component, "Housing Info". This "Housing Info" is "modal" since it hides everything behind but you do not feel it as
    a dialog but a full page at top of the previous page. Next you can popup more by clicking "Trading Info" at the top-right. You can not go nowhere except 
@@ -62,10 +62,10 @@ Then I will list some commonly used ones.
    ```
    
 - <b>Wrapper for Redux</b><br>
-   **Problem**: Redux does a simple pub/sub. All the reducers and subscribers will be invoke for any dispatching (This is really not efficient at all. I am wondering
+   <b>Problem</b>: Redux does a simple pub/sub. All the reducers and subscribers will be invoke for any dispatching (This is really not efficient at all. I am wondering
    why they don't use type to map the listeners so that not all the listeners are called for each single action dispatching). 
    So you have to place if statement in all the subscribers to only let the corresponding invocation through.<br/><br/>
-   **Solution**: I wrote a wrapper, "subscribe" to hide the filtering within the wrapper. So you can simply subscribe as :<br/><br/>
+   <b>Solution</b>: I wrote a wrapper, "subscribe" to hide the filtering within the wrapper. So you can simply subscribe as :<br/><br/>
    ```
       cs.subscribe("myType", action=>{});
    ```
@@ -77,10 +77,10 @@ Then I will list some commonly used ones.
    See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>;   
    
 - <b>Pub/sub Pattern</b><br>
-   **Problem**: In some case, you want to handle a dispatching in a variety of places/components instead of reducers, specially when the dispatching may not impact just
+   vProblem</b>: In some case, you want to handle a dispatching in a variety of places/components instead of reducers, specially when the dispatching may not impact just
    state. But Redux never upates variables like LastAction when Redux can not find a reducer. So you can not even identify that a dispatching is sent to whom in a subscriber (listener) since the action is never saved anywhere.
  of action. <br/><br/> 
-   **Solution**: I add a middleware to collect the action before all the listeners are invoked and then use the collected action in the listeners. In this way, you can handle a dispatched action anywhere out side reducer.
+   <b>Solution</b>: I add a middleware to collect the action before all the listeners are invoked and then use the collected action in the listeners. In this way, you can handle a dispatched action anywhere out side reducer.
    
       
 /**** here are some commonly used ones***/
