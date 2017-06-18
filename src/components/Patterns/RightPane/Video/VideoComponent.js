@@ -63,7 +63,7 @@ export default class VideoComponent extends React.Component{
 	    return (
 	      <div>
 		     <div style={{"margin":"5px"}}>
-	    		<input placeholder="Search Videos" onKeyPress={(e)=>{if (e.key==='Enter') this.props.handleSearch(e.target.value);}}/>
+	    		<input placeholder="Search Videos" onKeyPress={e=>{if (e.key==='Enter') {this.props.handleSearch(e.target.value);e.target.value=""}}}/>
 	    	</div>
 	        <YouTube videoId={this.props.currentVideo.id} onReady={this.onReady} opts={opts}/>
 	        <br/>

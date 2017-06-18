@@ -37,7 +37,7 @@ class _VideoContainer extends React.Component {
 		RemoteService.fetch(url, {"callback":(res)=> {
 			self.videos = [];
 			var items = res.items;
-			self.nextPageToken = res.data.nextPageToken;
+			self.nextPageToken = res.nextPageToken;
 			for (var i=0; i<items.length; i++) {
 				if (items[i].id.videoId==undefined) {
 					continue;

@@ -19,7 +19,7 @@ export default class PhotoComponent extends React.Component{
 	    return (
 	      <div>
 	      	<div style={{"margin":"5px"}}>
-	      		<input placeholder="Search photos" onKeyPress={(e)=>{if (e.key==='Enter') this.props.handleSearch(e.target.value);}}/>
+	      		<input placeholder="Search photos" onKeyPress={e=>{if (e.key==='Enter') {this.props.handleSearch(e.target.value);e.target.value=""}}}/>
 	      	</div>
 	      	<div style={{"width":"350px", "height":"200px"}}>
 		      <ImageGallery
