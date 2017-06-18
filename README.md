@@ -114,10 +114,13 @@ Then I will list some commonly used ones.
 	  }
   ```
 <br/>
-And subscribe in html like
+And subscribe in html like<br/>
+
 ```
     <Subscriber topic="/right/text" field="innerHTML" optionField="text"><p/></Subscriber>
 ```
+<br/><br/>
+
 /**** here are some commonly used ones***/
 
 
