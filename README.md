@@ -92,7 +92,8 @@ Then I will list some commonly used ones.
   (action in term of Redux) to subscribers (reducers in term of Redux) in JSX-html instead of defining a handler to dispatch for an UI activity. Or like I discuss in the previous
   item above, "you only want to let other parties know something happen (with data)" and there is no synchronized impact to the views yet, meaning that the result of the dispatching
   may not need reducers.<br/><br/> 
-  <b>Solution</b>: I introduced a toolkit, <a href="https://github.com/coolshare/CoolshareReactPubSub" target=_blank>CoolshareReactPubSub</a>. You can publish in html like<br/><br/>
+  <b>Solution</b>: I introduced a toolkit, <a href="https://github.com/coolshare/CoolshareReactPubSub" target=_blank>CoolshareReactPubSub</a>.<br/><br/> 
+  You can publish in html like<br/><br/>
   ```
 	  render() {
 	      return (
@@ -112,6 +113,11 @@ Then I will list some commonly used ones.
 	    );
 	  }
   ```
+<br/>
+And subscribe in html like
+```
+    <Subscriber topic="/right/text" field="innerHTML" optionField="text"><p/></Subscriber>
+```
 /**** here are some commonly used ones***/
 
 
