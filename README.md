@@ -79,13 +79,39 @@ Then I will list some commonly used ones.
    See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>;<br/>
    Actually, cs.dispatch is another example of wrapper.   
    
-- <b>Pub/sub Pattern</b><br>
-   vProblem</b>: In some case, you want to handle a dispatching in a variety of places/components instead of reducers, specially when the dispatching may not impact just
-   state. But Redux never upates variables like LastAction when Redux can not find a reducer. So you can not even identify that a dispatching is sent to whom in a subscriber (listener) since the action is never saved anywhere.
+- <b>Dispatch as pub/sub</b><br>
+   <b>Problem</b>: In some case, you want to handle a dispatching in a variety of places/components instead of reducers, or you simply need a pub/sub communication that has nothing to do
+   with saving anything in the store: you only want to let other parties know something happen (with data). But Redux's dispatch only deal with reducers and Redux never upates variables like 
+   LastAction when Redux can not find a reducer. So you can not even identify that a dispatching is sent to whom in a subscriber (listener) since the action is never saved anywhere.
  of action. <br/><br/> 
    <b>Solution</b>: I add a middleware to collect the action before all the listeners are invoked and then use the collected action in the listeners. In this way, you can handle a dispatched action anywhere out side reducer.
    
-      
+- <b>Pub/sub Pattern</b><br> 
+  <b>Problem</b>: the major communication in Redux is that one party dispatches an action and listeners (reducers) receive the action and process it to impact views.
+  But in a complicate application, you sometimes need more handy ways to communicate with other parties. For example, you want to simple publish (dispatch in term of Redux) a topic 
+  (action in term of Redux) to subscribers (reducers in term of Redux) in JSX-html instead of defining a handler to dispatch for an UI activity. Or like I discuss in the previous
+  item above, "you only want to let other parties know something happen (with data)" and there is no synchronized impact to the views yet, meaning that the result of the dispatching
+  may not need reducers.<br/><br/> 
+  <b>Solution</b>: I introduced a toolkit, <a href="https://github.com/coolshare/CoolshareReactPubSub" target=_blank>CoolshareReactPubSub</a>. You can publish in html like<br/><br/>
+  ```
+	  render() {
+	      return (
+	        <div>
+	           <Publisher topic="/left/button"><button>Left</button></Publisher>
+	           <Publisher topic="/left/Publish"><a href="#" className="ddd">aaaa</a></Publisher>
+	           <Publisher topic="/left/Publish" event="Change" options="{'name':'Mark', 'address':'123 Main Ave San Jose, CA'}">
+	             <select>
+	               <option value="a">A</option>
+	               <option value="b">B</option>
+	             </select>
+	           </Publisher>
+	      	   <Publisher topic="/left/Publish">
+	      	     <MyComponentC/>
+	      	   </Publisher>
+	      </div>  
+	    );
+	  }
+  ```
 /**** here are some commonly used ones***/
 
 
