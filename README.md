@@ -76,7 +76,8 @@ Then I will list some commonly used ones.
        cs.unsubscribe("myType");
    ```
     
-   See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>;   
+   See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>;<br/>
+   Actually, cs.dispatch is another example of wrapper.   
    
 - <b>Pub/sub Pattern</b><br>
    vProblem</b>: In some case, you want to handle a dispatching in a variety of places/components instead of reducers, specially when the dispatching may not impact just
