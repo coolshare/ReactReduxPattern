@@ -43,7 +43,7 @@ Then I will list some commonly used ones.
         })
         
  ```
-   See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a> and <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/CommonMiddleware.js">/components/CommonMiddleware.js</a>. 
+   See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>,  <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/CommonReducer.js">/components/CommonReducer.js</a> and <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/CommonMiddleware.js">/components/CommonMiddleware.js</a>. 
    
  - <b>Popup Stack</b><br>
    **Problem**: In your application, in many case to achieve a better user experience, you need to allow users to jump into another point in the component 
