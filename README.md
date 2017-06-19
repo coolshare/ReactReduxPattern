@@ -98,7 +98,7 @@ Then I will list some commonly used ones.
    			
    			An input dispatch "test1" on "onChange" to set to field "test1" for action type "pubsubTest":    <Dispatcher action={{"type":"test1"}} event="Change" setState="pubsubTest.test1"><input type="text"/></Dispatcher>
    		````
-   		<li>Subscriber</li><br/>
+<br/><br/><li>Subscriber</li><br/>
    		Subscriber allows you to dispatch an action when its child element is interacted by user like clicking:<br/><br/> 
    		````
    			A Input subscribes actionType "test2":<Subscriber ActionType="test2"><input/></Subscriber>
