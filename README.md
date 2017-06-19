@@ -93,7 +93,7 @@ Then I will list some commonly used ones.
    		<li>Dispatcher</li><br/>
    		Dispatcher allows you to dispatch an action when its child element is interacted by user like clicking:
    		````
-   			&lt;Dispatcher action={{"type":"test1"}} event="Change"&gt;&lt;input type="text"/&gt;&lt;/Dispatcher&gt;
+   			    &lt;Dispatcher action={{"type":"test1"}} event="Change"&gt;&lt;input type="text"/&gt;&lt;/Dispatcher&gt;
    		````
    		
    		 and Subscriber. Dispatcher allow you to 
