@@ -46,11 +46,12 @@ Then I will list some commonly used ones.
    See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>,  <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/CommonReducer.js">/components/CommonReducer.js</a> and <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/CommonMiddleware.js">/components/CommonMiddleware.js</a>. 
    
  - <b>Popup Stack</b><br>
-   <b>Problem</b>: In your application, in many case to achieve a better user experience, you need to allow users to jump into another point in the component 
-   hierarchy. If you simply route (deep linking programmatically or allow user to jump by clicking in some case) to the point you may lost the current stay. 
-   The use may totally get lost after they finish the job in current stack level. So you need a state "Stack". Another issue you face is that if what you popup is an
-   general component, there could be another "short-cut" link/button pointing to another component. You better not use modal dialog since it may result multi-level 
-   modal dialogs, a bad UI behave.<br/><br/> 
+   <b>Problem</b>: This is not a React specific issue. In your application, in many case to achieve a better user experience, you need to allow users 
+   to jump into another point in the component hierarchy. If you simply route (deep linking programmatically or allow user to jump by clicking in some case) 
+   to the point you may lost the current stay. The use may totally get lost after they finish the job in current stack level. So you need a state "Stack". 
+   <br/>
+   Another issue you face is that if what you popup is an general component, there could be another "short-cut" link/button pointing to another component. 
+   You better not use modal dialog since it may result multi-level modal dialogs, a bad UI behave.<br/><br/> 
    <b>Solution</b>: I built a component/container, "StackViewContainer". It keeps all level of the stack "modal" so that users have to close all the popups to
    return when "drilling down" or jumping around. In the running demo, try it out by clicking link "React Patterns" at the top and click at "Popup Pattern" on the 
    left menu which links to an arbitrary component, "Housing Info". This "Housing Info" is "modal" since it hides everything behind but you do not feel it as
