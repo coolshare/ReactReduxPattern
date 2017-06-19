@@ -91,9 +91,9 @@ Then I will list some commonly used ones.
    or without data: you simple don't want to write a handler!<br/><br/> 
    <b>Solution</b>: I introduced two simple components: 
    		<li>Dispatcher</li><br/>
-   		Dispatcher allows you to dispatch an action when its child element is interacted by user like clicking:<br/><br/>
+   		Dispatcher allows you to dispatch an action when its child element is interacted by user like clicking:
    		````
-   			    &lt;Dispatcher action={{"type":"test1"}} event="Change"&gt;&lt;input type="text"/&gt;&lt;/Dispatcher&gt;
+   			An input dispatch "test1" on "onChange":    <Dispatcher action={{"type":"test1"}} event="Change"><input type="text"/></Dispatcher>
    		````
    		
    		 and Subscriber. Dispatcher allow you to 
