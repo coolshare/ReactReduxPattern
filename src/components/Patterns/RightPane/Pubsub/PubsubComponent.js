@@ -16,7 +16,12 @@ export default class PubsubComponent extends React.Component{
 
 	    return (
 	      <div style={{"height":"550px", "overflow":"auto"}}>
-	      	<h3>Demo of Pub/Sub Component</h3>
+	      	<h3>Demo of doing communication in HTML</h3>
+	      	<p>
+		      	Don't you feel so annoy about that you always need to write handlers to deal with users activity. In many cases, you really just like to trigger a dispatch with simple data
+		        or without data: you simple don't want to write a handler!<br/><br/> 
+		        Why not just dispatch and subscribe in HTML without any handler? Here:
+	        </p>
 	      	<div>A button dispatch "test1":<Dispatcher action={{"type":"test1", "data":"The button is clicked"}}><button>Test</button></Dispatcher></div>
 	      	<div>An input dispatch "test1" on "onChange":<Dispatcher action={{"type":"test1"}} event="Change"><input type="text"/></Dispatcher></div>
 	      	<div>An input dispatch "test2" on "Enter down":<Dispatcher action={{"type":"test2"}} event="KeyDown" keyFilter="Enter"><input type="text"/></Dispatcher></div>
