@@ -91,12 +91,23 @@ Then I will list some commonly used ones.
    or without data: you simple don't want to write a handler!<br/><br/> 
    <b>Solution</b>: I introduced two simple components: 
    		<li>Dispatcher</li><br/>
-   		Dispatcher allows you to dispatch an action when its child element is interacted by user like clicking:
+   		Dispatcher allows you to dispatch an action when its child element is interacted by user like clicking:<br/><br/> 
    		````
    			An input dispatch "test1" on "onChange":    <Dispatcher action={{"type":"test1"}} event="Change"><input type="text"/></Dispatcher>
+   			<br/>where the value of input will be delivered as the ation.data. Additionally, if you want to set a specific field in the Redux state, you can do it as the following<br/><br/> 
+   			
+   			An input dispatch "test1" on "onChange" to set to field "test1" for action type "pubsubTest":    <Dispatcher action={{"type":"test1"}} event="Change" setState="pubsubTest.test1"><input type="text"/></Dispatcher>
+   		````
+   		<li>Subscriber</li><br/>
+   		Subscriber allows you to dispatch an action when its child element is interacted by user like clicking:<br/><br/> 
+   		````
+   			A Input subscribes actionType "test2":<Subscriber ActionType="test2"><input/></Subscriber>
+   			<br/>where ation.data will be set as the value of input. You can also specify what specific field you like to set to the subscribed element (the input).
+   			
    		````
    		
-   		 and Subscriber. Dispatcher allow you to 
+   	To try this demo yourself, just select "React Patterns" at the top link. Than, select "Pubsub Pattern" at the left and have fun!
+   	See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/common/Dispatcher.js">/common/Dispatcher.js</a>, <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/common/Subscriber.js">/common/Subscriber.js</a>, <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/Patterns/RightPane/Pubsub/PubsubComponent.js">/components/Patterns/RightPane/Pubsub/PubsubComponent.js</a><br/>	 
    
 - <b>Pub/sub Pattern</b><br> 
   <b>Problem</b>: the major communication in Redux is that one party dispatches an action and listeners (reducers) receive the action and process it to impact views.

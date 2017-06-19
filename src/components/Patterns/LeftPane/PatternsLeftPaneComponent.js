@@ -12,7 +12,7 @@ export default class PatternsLeftPane extends React.Component {
         this.tree.loadData(this.props.data);
         // Select the first node
         if (this.props.currentPage) {
-        	var ch = this.tree.getChildNodes()[0].getChildren()[0].getChildren();
+        	var ch = this.tree.getChildNodes()[0].getChildren();
         	for (let i=0; i<ch.length; i++) {
         		var n = ch[i];
         		if (n.name===this.props.currentPage) {
@@ -20,14 +20,14 @@ export default class PatternsLeftPane extends React.Component {
         		}
         	}
         } else {
-        	this.tree.selectNode(this.tree.getChildNodes()[0].getChildren()[0].getChildren()[0]);
+        	this.tree.selectNode(this.tree.getChildNodes()[0].getChildren()[3]);
         }
         
     }
     render() {
 
         return (
-            <div style={{"width":"200px"}}>
+            <div style={{"width":"200px", "border-right": "solid 1px black"}}>
                 <InfiniteTree
                     ref={(c) => {if (c!==null) this.tree = c.tree;}}
                     autoOpen={true}

@@ -37,9 +37,15 @@ export const callbackMiddleware = store => next => action => {
 	    	action.options.action = action;
 	    	action.asyncDispatch({"type":"_CALLBACK_", "options": action.options});
 	    }
+	    if (action._type === "setState") {
+	    	let list = action._data.split(".");
+    		action.asyncDispatch({"type":list[0], "data": action.data});
+    		
+    	}
 	    return next(action);
 	}
 export const currentAction = store => next => action => {
     	cs.currentAction = action;
+    	
     return next(action);
 }
