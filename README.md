@@ -65,7 +65,8 @@ Then I will list some commonly used ones.
 - <b>Wrapper for Redux</b><br>
    <b>Problem</b>: Redux does a simple pub/sub. All the reducers and subscribers will be invoke for any dispatching (This is really not efficient at all. I am wondering
    why they don't use type to map the listeners so that not all the listeners are called for each single action dispatching). 
-   So you have to place if statement in all the subscribers to only let the corresponding invocation through.<br/><br/>
+   So you have to place if statement in all the subscribers to only let the corresponding invocation through. Another issue with Redux built-in subscribe is that
+   there is access to action handily and LastAction may not available all the time.<br/><br/>
    <b>Solution</b>: I wrote a wrapper, "subscribe" to hide the filtering within the wrapper and inject the action as a parameter. So you can simply subscribe as :<br/><br/>
    ```
       cs.subscribe("myType", action=>{
