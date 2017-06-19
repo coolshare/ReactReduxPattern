@@ -12,7 +12,7 @@ http://coolshare.com/ReactReduxPattern
 This package is designed to get you up and running as a comprehensive web application.
 Another major goal of this package is to illustrate commonly used patterns in a React application.
 I will first focus on some of the patterns I introduced for my own usage in my projects at work.
-Then I will list some commonly used ones.
+Then I will list some commonly used ones. The patterns introduced and used by me:
 
  - <b>Store Customization</b><br>
    <b>Problem</b>: Access to the store and store related methods from anywhere is not easy and using many store related methods as-is does not meet our need. 
@@ -29,7 +29,7 @@ Then I will list some commonly used ones.
       cs.subscribe("myType", handler);     
    ```
    <br/>See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a> and <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/index.js">/index.js</a>. 
-   The CommunicationService will do a lot more that I will describe below. The patterns introduced and used by me:
+   The CommunicationService will do a lot more that I will describe below. 
   
  - <b>Dispatch with callback</b><br>
    <b>Problem</b>: dispatch of Redux store does not allow callback. This is not convenient since you sometimes want to write the handler in the same place
