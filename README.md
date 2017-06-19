@@ -90,7 +90,7 @@ Then I will list some commonly used ones.
    <b>Problem</b>: Don't you feel so annoy about that you always need to write handler to deal with users activity. In many cases, you really just like to trigger a dispatch with simple data
    or without data: you simple don't want to write a handler!<br/><br/> 
    <b>Solution</b>: I introduced two simple components: 
-  - <b>Dispatcher</b>-<br/>
+  - <b>Dispatcher</b><br/>
    		Dispatcher allows you to dispatch an action when its child element is interacted by user like clicking:<br/><br/> 
    		
     An input dispatch "test1" on "onChange":<br/>     
@@ -101,8 +101,8 @@ Then I will list some commonly used ones.
 
         <Dispatcher action={{"type":"test1"}} event="Change" setState="pubsubTest.test1"><input type="text"/></Dispatcher>
    	
-<br/><br/>  
-  - <b>Subscriber</b>-<br/>
+	<br/><br/>  
+  - <b>Subscriber</b><br/>
    		Subscriber allows you to dispatch an action when its child element is interacted by user like clicking:<br/><br/> 
    	
    			A Input subscribes actionType "test2":<Subscriber ActionType="test2"><input/></Subscriber>
