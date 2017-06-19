@@ -28,7 +28,7 @@ Then I will list some commonly used ones.
       cs.dispatch({"type":"myType", ...}, myCallback); //custom callback that will be described below
       cs.subscribe("myType", handler);     
    ```
-   <br/>See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>. 
+   <br/>See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a> and <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/index.js">/index.js</a>. 
    The CommunicationService will do a lot more that I will describe below. 
   
  - <b>Dispatch with callback</b><br>
