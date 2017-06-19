@@ -103,7 +103,7 @@ Then I will list some commonly used ones.
    	
 <br/><br/>  
 
-  - <b>Subscriber</b><br/>
+    - <b>Subscriber</b><br/>
    		Subscriber allows you to dispatch an action when its child element is interacted by user like clicking:<br/><br/> 
    	
    			A Input subscribes actionType "test2":<Subscriber ActionType="test2"><input/></Subscriber>
