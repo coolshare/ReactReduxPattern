@@ -97,13 +97,13 @@ Then I will list some commonly used ones.
     <Dispatcher action={{"type":"test1"}} event="Change"><input type="text"/></Dispatcher>
 <br/> <br/>where the value of input will be delivered as the ation.data. Additionally, if you want to set a specific field in the Redux state, you can do it as the following<br/><br/> 
    			
-An input dispatch "test1" on "onChange" to set to field "test1" for action type "pubsubTest":    
+    An input dispatch "test1" on "onChange" to set to field "test1" for action type "pubsubTest":    
 
-    <Dispatcher action={{"type":"test1"}} event="Change" setState="pubsubTest.test1"><input type="text"/></Dispatcher>
+        <Dispatcher action={{"type":"test1"}} event="Change" setState="pubsubTest.test1"><input type="text"/></Dispatcher>
    	
 <br/><br/>  
 
-- <b>Subscriber</b><br/>
+  - <b>Subscriber</b><br/>
    		Subscriber allows you to dispatch an action when its child element is interacted by user like clicking:<br/><br/> 
    	
    			A Input subscribes actionType "test2":<Subscriber ActionType="test2"><input/></Subscriber>
