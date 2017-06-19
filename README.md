@@ -86,6 +86,18 @@ Then I will list some commonly used ones.
  of action. <br/><br/> 
    <b>Solution</b>: I add a middleware to collect the action before all the listeners are invoked and then use the collected action in the listeners. In this way, you can handle a dispatched action anywhere out side reducer.
    
+- <b>Dispatch and subscribe in HTML</b><br>
+   <b>Problem</b>: Don't you feel so annoy about that you always need to write handler to deal with users activity. In many cases, you really just like to trigger a dispatch with simple data
+   or without data: you simple don't want to write a handler!<br/><br/> 
+   <b>Solution</b>: I introduced two simple components: 
+   		<li>Dispatcher</li><br/>
+   		Dispatcher allows you to dispatch an action when its child element is interacted by user like clicking:
+   		````
+   			&lt;Dispatcher action={{"type":"test1"}} event="Change"&gt;&lt;input type="text"/&gt;&lt;/Dispatcher&gt;
+   		````
+   		
+   		 and Subscriber. Dispatcher allow you to 
+   
 - <b>Pub/sub Pattern</b><br> 
   <b>Problem</b>: the major communication in Redux is that one party dispatches an action and listeners (reducers) receive the action and process it to impact views.
   But in a complicate application, you sometimes need more handy ways to communicate with other parties. For example, you want to simple publish (dispatch in term of Redux) a topic 

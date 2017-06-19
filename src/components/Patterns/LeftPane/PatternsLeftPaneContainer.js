@@ -21,6 +21,9 @@ class _PatternsLeftPaneContainer extends React.Component {
 			    	}, {
 			        id: 'Popup Pattern',
 			        name: 'Popup Pattern'
+			    },{
+			        id: 'Pubsub Pattern',
+			        name: 'Pubsub Pattern'
 			    }]
 			};
 	}

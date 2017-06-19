@@ -26,7 +26,7 @@ import { browserHistory } from 'react-router';
 				}
 				this.idList.push(id);
 				var comList = [...this.state.componentList];
-				comList.push(<Provider store={cs.store}>
+				comList.push(<Provider key={id} store={cs.store}>
 				<div id={id}>{React.createElement(c)}</div>
 			    </Provider>)
 			    this.setState({"componentList":comList, selected:id})			   
