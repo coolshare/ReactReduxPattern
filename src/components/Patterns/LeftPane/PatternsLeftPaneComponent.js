@@ -27,7 +27,7 @@ export default class PatternsLeftPane extends React.Component {
     render() {
 
         return (
-            <div style={{"width":"200px", "border-right": "solid 1px black"}}>
+            <div style={{"width":"300px", "border-right": "solid 1px black"}}>
                 <InfiniteTree
                     ref={(c) => {if (c!==null) this.tree = c.tree;}}
                     autoOpen={true}
