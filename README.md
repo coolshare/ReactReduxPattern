@@ -90,6 +90,7 @@ Then I will list some commonly used ones.
    <b>Problem</b>: Don't you feel so annoy about that you always need to write handler to deal with users activity. In many cases, you really just like to trigger a dispatch with simple data
    or without data: you simple don't want to write a handler!<br/><br/> 
    <b>Solution</b>: I introduced two simple components: 
+   <pre>
   - <b>Dispatcher</b><br/>
    		Dispatcher allows you to dispatch an action when its child element is interacted by user like clicking:<br/><br/> 
    		
@@ -109,7 +110,7 @@ An input dispatch "test1" on "onChange" to set to field "test1" for action type 
    		
    	To try this demo yourself, just select "React Patterns" at the top link. Than, select "Pubsub Pattern" at the left and have fun!
    	See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/common/Dispatcher.js">/common/Dispatcher.js</a>, <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/common/Subscriber.js">/common/Subscriber.js</a>, <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/Patterns/RightPane/Pubsub/PubsubComponent.js">/components/Patterns/RightPane/Pubsub/PubsubComponent.js</a><br/>	 
-   
+</pre>   
 - <b>Pub/sub Pattern</b><br> 
   <b>Problem</b>: the major communication in Redux is that one party dispatches an action and listeners (reducers) receive the action and process it to impact views.
   But in a complicate application, you sometimes need more handy ways to communicate with other parties. For example, you want to simple publish (dispatch in term of Redux) a topic 
