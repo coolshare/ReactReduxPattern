@@ -102,7 +102,7 @@ An input dispatch "test1" on "onChange" to set to field "test1" for action type 
    		Subscriber allows you to dispatch an action when its child element is interacted by user like clicking:<br/><br/> 
    	
    			A Input subscribes actionType "test2":<Subscriber ActionType="test2"><input/></Subscriber>
-   			<br/>where ation.data will be set as the value of input. You can also specify what specific field you like to set to the subscribed element (the input).
+   			<br/><br/>where ation.data will be set as the value of input. You can also specify what specific field you like to set to the subscribed element (the input).
    		
    	To try this demo yourself, just select "React Patterns" at the top link. Than, select "Pubsub Pattern" at the left and have fun!
    	See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/common/Dispatcher.js">/common/Dispatcher.js</a>, <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/common/Subscriber.js">/common/Subscriber.js</a>, <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/Patterns/RightPane/Pubsub/PubsubComponent.js">/components/Patterns/RightPane/Pubsub/PubsubComponent.js</a><br/>	 
