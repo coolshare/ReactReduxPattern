@@ -87,9 +87,9 @@ Then I will list some commonly used ones.
    <b>Solution</b>: I add a middleware to collect the action before all the listeners are invoked and then use the collected action in the listeners. In this way, you can handle a dispatched action anywhere out side reducer.
    
 - <b>Dispatch and subscribe in HTML</b><br>
-   <b>Problem</b>: Don't you feel so annoy about that you always need to write handler to deal with users activity. In many cases, you really just like to trigger a dispatch with simple data
+   <b>Problem</b>: Don't you feel so annoy about that you always need to write handlers to deal with users activity. In many cases, you really just like to trigger a dispatch with simple data
    or without data: you simple don't want to write a handler!<br/><br/> 
-   <b>Solution</b>: I introduced two simple components: 
+   <b>Solution</b>: I introduced two simple components to do communication in HTML: 
   - <b>Dispatcher</b><br/>
    		Dispatcher allows you to dispatch an action when its child element is interacted by user like clicking:<br/><br/> 
    		
