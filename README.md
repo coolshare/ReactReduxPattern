@@ -14,7 +14,7 @@ Another major goal of this package is to illustrate commonly used patterns in a 
 I will first focus on some of the patterns I introduced for my own usage in my projects at work.
 Then I will list some commonly used ones.
 
- - <b>Access store globally</b><br>
+ - <b>Store Customization</b><br>
    <b>Problem</b>: Access to the store and store related methods from anywhere is not easy and using many store related methods as-is does not meet our need. 
    For example, we need a dispatch with callback but the as-is dispatch of Redux store
    does not provide that. We need a global access point to access store and store related methods.<br/><br/> 
