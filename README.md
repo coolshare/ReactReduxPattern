@@ -156,6 +156,7 @@ And subscribe in html like<br/>
  - <b>React patterns</b>. the following patterns are used in the application
  
    1). <b>Container/Component</b>. It is used under /components/Patterns: all the components under this directory are written with this pattern.<br/>
+<br/>See details in <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/Patterns/RightPane/Photo/PhotoComponent.js">/components/Patterns/RightPane/Photo/PhotoComponent.js</a> and <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/Patterns/RightPane/Photo/PhotoContainer.js">/components/Patterns/RightPane/Photo/PhotoContainer.js</a><br/></br/>
    	    
    2). <b>State hoisting and Stateless function (pure function)</b>: Events are changes in state. Their data needs to be passed to stateful container components parents. Example (in VideoContainer.js and VideoComponent.js):
    
@@ -184,7 +185,7 @@ And subscribe in html like<br/>
 	       }
     	}
    and VideoComponent is a stateless "function".
-   
+<br/>See details in <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/Patterns/RightPane/Video/VideoComponent.js">/components/Patterns/RightPane/Video/VideoComponent.js</a> and <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/Patterns/RightPane/Video/VideoContainer.js">/components/Patterns/RightPane/Video/VideoContainer.js</a><br/></br/>
    3). <b>conditional rendering</b>. The is an alternative of routing to show different content/page. Example (in MapContainer.js):
    
 		class _MapContainer extends Component {
@@ -206,7 +207,8 @@ And subscribe in html like<br/>
 					  }
 					)(_MapContainer);
 		export default MapContainer
-	
+		
+<br/>See details in <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/MainPage/Maps/MapContainer.js">/components/MainPage/Maps/MapContainer.js</a> <br/></br/>
    4).<b>Render Callbacks</b>: a function passed as a prop to a component, which allows that component to render something<br/>
    		A common use-case of a render callback was to allow a child to render something using data it did not receive in props.
    	Example (RightPane.js)
@@ -234,7 +236,7 @@ Then this function is invoke as
         children (this.props.currentPage)
         
 where id above is this.props.currentPage. What is good on this pattern? The benefit is that ChildPane can be used somewhere else with different content instead of "{id=>id==="TodoList"?<TodoList/>:id==="HousingInfo"?<HousingInfo/>:null}" with the "this.props.currentPag" built-in like a closure.
-
+<br/>See details in <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/MainPage/FormTable/RightPane.js">/components/MainPage/FormTable/RightPane.js</a> <br/></br/>
  5).<b>Proxy Component</b>: Wrapping a component with attributes and reuse it.
    
    Example (in TodoList.js)
@@ -254,11 +256,11 @@ where id above is this.props.currentPage. What is good on this pattern? The bene
 	   			
         }
     }
-    			
+<br/>See details in <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/MainPage/FormTable/TodoList/TodoList.js">/components/MainPage/FormTable/TodoList/TodoList.js</a> <br/></br/> 			
    6).<b>A higher-order component</b>: a higher-order component is a function that takes a component and returns a new component.
    
    Example (in TodoList.js)   
-   
+<br/>See details in <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/MainPage/FormTable/TodoList/TodoList.js">/components/MainPage/FormTable/TodoList/TodoList.js</a> <br/></br/> 		
  - <b>Basic function/feature</b> of Redux: connect of React-redux, middleware, dispatching actions, subscription and so on. 
    This kit uses a pure Redux pattern in the area communication and view update so no "setState" is used except local    
    state like input content state impact button enable state. 
