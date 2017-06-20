@@ -93,7 +93,7 @@ Then I will list some commonly used ones. The patterns introduced and used by me
    or without data: you simply don't want to write a handler!<br/><br/> 
    <b>Solution</b>: I introduced two simple components to do communication in HTML: 
   - <b>Dispatcher</b><br/>
-   		Dispatcher allows you to dispatch an action when its child element is interacted by user like clicking:<br/><br/> 
+   		Dispatcher allows you to dispatch an action when wrapped element(its child element) is interacted by user like clicking:<br/><br/> 
    		
     An input dispatch "test1" on "onChange":<br/>     
               ```
