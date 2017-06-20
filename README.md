@@ -107,7 +107,7 @@ Then I will list some commonly used ones. The patterns introduced and used by me
    	
 	<br/><br/>  
   - <b>Subscriber</b><br/>
-   		Subscriber allows you to subscribe a Redux "type" to receive an action and set action.data as value of its child element (the input):<br/><br/> 
+   		Subscriber allows you to subscribe an action "type" to receive an action and set action.data as value of its child element (the input):<br/><br/> 
    	
    			A Input subscribes actionType "test2":<Subscriber ActionType="test2"><input/></Subscriber>
    			<br/><br/>where ation.data will be set as the value of input. You can also specify what specific field you like to set to the subscribed element (the input).
