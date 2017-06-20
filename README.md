@@ -157,7 +157,7 @@ And subscribe in html like<br/>
  
    1). <b>Container/Component</b>. It is used under /components/Patterns: all the components under this directory are written with this pattern.<br/>
    	    
-   2). <b>State hoisting and Stateless function (pure function)*: Events are changes in state. Their data needs to be passed to stateful container components parents. Example (in VideoContainer.js and VideoComponent.js):
+   2). <b>State hoisting and Stateless function (pure function)</b>: Events are changes in state. Their data needs to be passed to stateful container components parents. Example (in VideoContainer.js and VideoComponent.js):
    
 	   The event handler resides in VideoContainer and VideoComponent hoists the data entered by users to
 	   VideoContainer:
