@@ -155,7 +155,8 @@ And subscribe in html like<br/>
 
  - <b>React patterns</b>. the following patterns are used in the application
  
-   1). *Container/Component*. It is used under /components/Patterns: all the components are written with this pattern.<br/>
+   1). *Container/Component*. It is used under /components/Patterns: all the components under this directory are written with this pattern.<br/>
+   	    
    2). *State hoisting and Stateless function (pure function)*: Events are changes in state. Their data needs to be passed to stateful container components parents. Example (in VideoContainer.js and VideoComponent.js):
    
 	   The event handler resides in VideoContainer and VideoComponent hoists the data entered by users to
@@ -206,7 +207,7 @@ And subscribe in html like<br/>
 					)(_MapContainer);
 		export default MapContainer
 	
-   4).*Render Callbacks*: a function passed as a prop to a component, which allows that component to render something
+   4).*Render Callbacks*: a function passed as a prop to a component, which allows that component to render something<br/>
    		A common use-case of a render callback was to allow a child to render something using data it did not receive in props.
    	Example (RightPane.js)
    	
