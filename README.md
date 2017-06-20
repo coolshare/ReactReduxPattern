@@ -155,9 +155,9 @@ And subscribe in html like<br/>
 
  - <b>React patterns</b>. the following patterns are used in the application
  
-   1). *Container/Component*. It is used under /components/Patterns: all the components under this directory are written with this pattern.<br/>
+   1). <b>Container/Component</b>. It is used under /components/Patterns: all the components under this directory are written with this pattern.<br/>
    	    
-   2). *State hoisting and Stateless function (pure function)*: Events are changes in state. Their data needs to be passed to stateful container components parents. Example (in VideoContainer.js and VideoComponent.js):
+   2). <b>State hoisting and Stateless function (pure function)*: Events are changes in state. Their data needs to be passed to stateful container components parents. Example (in VideoContainer.js and VideoComponent.js):
    
 	   The event handler resides in VideoContainer and VideoComponent hoists the data entered by users to
 	   VideoContainer:
@@ -185,7 +185,7 @@ And subscribe in html like<br/>
     	}
    and VideoComponent is a stateless "function".
    
-   3). *conditional rendering*. The is an alternative of routing to show different content/page. Example (in MapContainer.js):
+   3). <b>conditional rendering</b>. The is an alternative of routing to show different content/page. Example (in MapContainer.js):
    
 		class _MapContainer extends Component {
 			...
@@ -207,7 +207,7 @@ And subscribe in html like<br/>
 					)(_MapContainer);
 		export default MapContainer
 	
-   4).*Render Callbacks*: a function passed as a prop to a component, which allows that component to render something<br/>
+   4).<b>Render Callbacks</b>: a function passed as a prop to a component, which allows that component to render something<br/>
    		A common use-case of a render callback was to allow a child to render something using data it did not receive in props.
    	Example (RightPane.js)
    	
@@ -235,7 +235,7 @@ Then this function is invoke as
         
 where id above is this.props.currentPage. What is good on this pattern? The benefit is that ChildPane can be used somewhere else with different content instead of "{id=>id==="TodoList"?<TodoList/>:id==="HousingInfo"?<HousingInfo/>:null}" with the "this.props.currentPag" built-in like a closure.
 
- 5).*Proxy Component*: Wrapping a component with attributes and reuse it.
+ 5).<b>Proxy Component</b>: Wrapping a component with attributes and reuse it.
    
    Example (in TodoList.js)
    
@@ -255,7 +255,7 @@ where id above is this.props.currentPage. What is good on this pattern? The bene
         }
     }
     			
-   6).*A higher-order component*: a higher-order component is a function that takes a component and returns a new component.
+   6).<b>A higher-order component</b>: a higher-order component is a function that takes a component and returns a new component.
    
    Example (in TodoList.js)   
    
