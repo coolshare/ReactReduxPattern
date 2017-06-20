@@ -110,7 +110,7 @@ Then I will list some commonly used ones. The patterns introduced and used by me
    		Subscriber allows you to subscribe an action "type" to receive an action and set action.data as value of its child element (the input):<br/><br/> 
    	
    			A Input subscribes actionType "test2":<Subscriber ActionType="test2"><input/></Subscriber>
-   			<br/><br/>where ation.data will be set as the value of input. You can also specify what specific field you like to set to the subscribed element (the input).
+   			where ation.data will be set as the value of input. You can also specify what specific field you like to set to the subscribed element (the input).
    		
    	To try this demo yourself, just select "React Patterns" at the top link. Than, select "Pubsub Pattern" at the left and have fun!
    	See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/common/Dispatcher.js">/common/Dispatcher.js</a>, <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/common/Subscriber.js">/common/Subscriber.js</a>, <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/Patterns/RightPane/Pubsub/PubsubComponent.js">/components/Patterns/RightPane/Pubsub/PubsubComponent.js</a><br/>	 
