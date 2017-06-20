@@ -90,7 +90,7 @@ Then I will list some commonly used ones. The patterns introduced and used by me
    
 - <b>Dispatch and subscribe in HTML</b><br>
    <b>Problem</b>: Don't you feel so annoy about that you always need to write handlers to deal with users activity. In many cases, you really just like to trigger a dispatch with simple data
-   or without data: you simple don't want to write a handler!<br/><br/> 
+   or without data: you simply don't want to write a handler!<br/><br/> 
    <b>Solution</b>: I introduced two simple components to do communication in HTML: 
   - <b>Dispatcher</b><br/>
    		Dispatcher allows you to dispatch an action when its child element is interacted by user like clicking:<br/><br/> 
