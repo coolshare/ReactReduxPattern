@@ -255,7 +255,7 @@ where id above is this.props.currentPage. What is good on this pattern? The bene
         }
     }
     			
-   5).*Proxy Component*: a higher-order component is a function that takes a component and returns a new component.
+   6).*A higher-order component*: a higher-order component is a function that takes a component and returns a new component.
    
    Example (in TodoList.js)   
    
