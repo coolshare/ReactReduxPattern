@@ -257,7 +257,8 @@ where id above is this.props.currentPage. What is good on this pattern? The bene
         }
     }
 <br/>See details in <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/MainPage/FormTable/TodoList/TodoList.js">/components/MainPage/FormTable/TodoList/TodoList.js</a> <br/><br/> 			
-   		
+<br/><br/>
+<h4>The third party software used in the package:   		
  - <b>Basic function/feature</b> of Redux: connect of React-redux, middleware, dispatching actions, subscription and so on. 
    This kit uses a pure Redux pattern in the area communication and view update so no "setState" is used except local    
    state like input content state impact button enable state. 
