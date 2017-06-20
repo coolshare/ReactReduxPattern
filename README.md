@@ -211,6 +211,9 @@ And subscribe in html like<br/>
    		A common use-case of a render callback was to allow a child to render something using data it did not receive in props.
    	Example (RightPane.js)
    	
+   	    function ChildPane(children) {
+	       return children(id)
+        }
    		class _RightPane extends React.Component{
 			render(){
 				let ChildPane = ({ children  }) => children (this.props.currentPage)
