@@ -11,37 +11,32 @@ export default class VideoComponent extends React.Component{
 	  	      player: null,
 	  	      autoSwitch:true
 	  	    };
-	    this.onReady = this.onReady.bind(this);
-	    this.onPlayVideo = this.onPlayVideo.bind(this);
-	    this.onPauseVideo = this.onPauseVideo.bind(this);
-	    this.onNextVideo = this.onNextVideo.bind(this);
-	    this.onPreVideo = this.onPreVideo.bind(this);
-	    this.onStayVideo = this.onStayVideo.bind(this);
+
 	  }
 	
-	  onReady(event) {
+	  onReady = (event) => {
 	    //console.log(`YouTube Player object for videoId: "${this.state.videoId}" has been saved to state.`); // eslint-disable-line
 	    this.setState({
 	      player: event.target,
 	    });
 	  }
 
-	  onPlayVideo() {
+	  onPlayVideo = (event) => {
 	    this.state.player.playVideo();
 	  }
 
-	  onPauseVideo() {
+	  onPauseVideo = (event) => {
 	    this.state.player.pauseVideo();
 	  }
 
-	  onNextVideo() {
+	  onNextVideo = (event) => {
 		  this.props.showNext(1);
 	  }
 	  
-	  onPreVideo() {
+	  onPreVideo = (event) => {
 		  this.props.showNext(-1);
 	  }
-	  onStayVideo() {
+	  onStayVideo = (event) => {
 		  if (this.state.autoSwitch===true) {
 			  this.props.stopTimer();
 		  } else {

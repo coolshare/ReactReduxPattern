@@ -17,7 +17,7 @@ class _VideoContainer extends React.Component {
 		var self = this;
 		this.handleSearch();
 	}
-	handlePeriod(s) {
+	handlePeriod = (s) => {
 		if (s=="whole") {
 			this.continueTiming = false;
 		} else {
@@ -26,7 +26,7 @@ class _VideoContainer extends React.Component {
 		
 	}
 	
-	handleSearch(s, token) {
+	handleSearch = (s, token) => {
 		let self = this;
 		self.search = s || this.props.search || "go pro"
 		let od = order[Math.floor(Math.random()*order.length)]
@@ -49,7 +49,7 @@ class _VideoContainer extends React.Component {
 		}});
 	}
 	
-	showNext(d, t) {
+	showNext = (d, t) => {
 		var self = this;
 		
 		if (t) {
@@ -64,15 +64,15 @@ class _VideoContainer extends React.Component {
 		
 	}
 	
-	stopTimer() {
+	stopTimer = () => {
 		this.continueTiming = false;
 	}
 	
-	resumeTimer() {
+	resumeTimer = () => {
 		this.continueTiming = true;
 		this.playNext(1, self.period);
 	}
-	playNext(d) {
+	playNext = (d) => {
 		var self = this;
 		self.count+=d;
 		if (self.count>self.videos.length-1) {
@@ -95,7 +95,7 @@ class _VideoContainer extends React.Component {
 		}
 		var self = this;
 	    return (
-	      < VideoComponent  handlePeriod={this.handlePeriod.bind(this)} stopTimer={this.stopTimer.bind(this)} resumeTimer={this.resumeTimer.bind(this)} currentVideo={this.props.currentVideo} showNext={this.showNext.bind(this)} handleSearch={this.handleSearch.bind(this)}
+	      < VideoComponent  handlePeriod={this.handlePeriod} stopTimer={this.stopTimer.bind(this)} resumeTimer={this.resumeTimer.bind(this)} currentVideo={this.props.currentVideo} showNext={this.showNext.bind(this)} handleSearch={this.handleSearch.bind(this)}
 	        /> 
 	    )
 	  }

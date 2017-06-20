@@ -15,13 +15,11 @@ class _TodoList extends React.Component{
 	      { key: 'id', name: 'ID'},
 	      { key: 'text', name: 'Text'},
 	      { key: 'completed', name: 'Completed'} ];
-		this.rowGetter = this.rowGetter.bind(this);
 		
 	}
 
-	rowGetter(i) {
-	    return this.props.todos[i];
-	  }
+	rowGetter = (i) => this.props.todos[i];
+	  
 	componentWillMount () {
 	    this.count = 0;
 	    var self = this;

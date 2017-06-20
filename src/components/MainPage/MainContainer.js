@@ -13,7 +13,7 @@ import AboutPattern from './AboutPattern'
 */
 class _MainContainer extends React.Component{
 
-	handleSelect(tabId) {
+	handleSelect = (tabId) => {
 		cs.dispatch({"type":"switchTab", "tabId":tabId})
 	}
 	/**

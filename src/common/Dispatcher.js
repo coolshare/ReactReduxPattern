@@ -33,7 +33,6 @@ class Dispatcher extends React.Component {
   constructor(props) {
     super(props);
     
-    this.dispatch = this.dispatch.bind(this);
     if (props.classes) {
     	var cn = [];
     	for (var c in props.classes) {
@@ -48,7 +47,7 @@ class Dispatcher extends React.Component {
     
   }
   
-  dispatch(e) {
+  dispatch = (e) => {
 	  if (e.target.nodeName!=="BUTTON") {
 		  this.props.action.data = e.target.value;
 	  }

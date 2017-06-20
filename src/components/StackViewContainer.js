@@ -16,7 +16,7 @@ import { browserHistory } from 'react-router';
 				this.idList = [];
 			}
 			
-			push(cc) {
+			push = (cc) => {
 				var c = cc[0];
 				cs.dispatch({"type":"BeforePopupPush", "data":cc[1]})
 				let id = cc[1]+"_"+Utils.getId()
@@ -31,7 +31,7 @@ import { browserHistory } from 'react-router';
 			    </Provider>)
 			    this.setState({"componentList":comList, selected:id})			   
 			}
-			pop() {
+			pop = () => {
 				var comList = [...this.state.componentList];
 				comList.pop();
 				var poppedComponentId = this.idList.pop();

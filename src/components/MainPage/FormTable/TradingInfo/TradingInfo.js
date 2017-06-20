@@ -22,12 +22,11 @@ class _TradingInfo extends React.Component{
 	      { key: 'type', name: 'Type', resizable: true},
 	      { key: 'utctime', name: 'UTC Time', resizable: true},
 	      { key: 'volume', name: 'Volume', resizable: true}];
-		this.rowGetter = this.rowGetter.bind(this);
 		cs.registerGlobal("tradingJSONPCallback", data=>cs.dispatch({"type":"LoadTrading", "data":data.list.resources}));
 	
 	}
 
-	rowGetter(i) {
+	rowGetter = (i) => {
 		let d = this.props.data[i];
 	    let a = d.resource.fields;
 	    return {"name":a.name, "price":a.price, "symbol":a.symbol, "type":a.type, "utctime":a.utctime, "volume":a.volume}

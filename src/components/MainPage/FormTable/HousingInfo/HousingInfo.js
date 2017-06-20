@@ -21,14 +21,12 @@ class _HousingInfo extends React.Component{
 	      { key: 'address', name: 'Address', resizable: true },
 	      { key: 'value', name: 'Value', resizable: true },
 	      { key: 'link', name: 'Link', resizable: true} ];
-		this.rowGetter = this.rowGetter.bind(this);
+		
 		//cs.registerGlobal("housingJSONPCallback", data=>cs.dispatch({"type":"LoadHousing", "data":data.properties.comparables}));		
 	}
-	handleTrading() {
-		cs.popup(TradingInfo, "TradingInfo");
-	}
+	handleTrading = () => cs.popup(TradingInfo, "TradingInfo");
 	
-	rowGetter(i) {
+	rowGetter = (i) => {
 		let d = this.props.data[i];
 	    let a = d.address;
 	    return {"address":a.street+", "+ [a.city, a.state, a.zipcode].join(" "), "value":d.zestimate.amount["#text"]+" "+d.zestimate.amount["@currency"], "link":d.links.homedetails}
@@ -46,7 +44,7 @@ class _HousingInfo extends React.Component{
 	render(){
 		return (
 			<div id="todoList" style={{backgroundColor:'#b0e0e6', minHeight:'500px', marginTop:'-10px', marginLeft:'-20px'}}>
-				{cs.isStackEmpty()?null:<div className="PopupHeader"><PopupCloseBox/><a onClick={this.handleTrading.bind(this)} style={{"cursor":"pointer", "float":"right", "marginRight":"50px"}}>Trading Info (Popup pattern demo)</a></div>}
+				{cs.isStackEmpty()?null:<div className="PopupHeader"><PopupCloseBox/><a onClick={this.handleTrading} style={{"cursor":"pointer", "float":"right", "marginRight":"50px"}}>Trading Info (Popup pattern demo)</a></div>}
 				
 				<h4>Housing Info</h4>
 				<div style={{minHeight:'250px'}}>

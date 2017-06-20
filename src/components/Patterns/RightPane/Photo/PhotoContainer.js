@@ -14,7 +14,7 @@ class _PhotoContainer extends React.Component {
 		this.handleSearch();
 	}
 	
-	handleSearch(s) {
+	handleSearch = (s) => {
 		let self = this;
 		let search = s || this.props.photoSearch || "pet"
 		RemoteService.fetch("https://pixabay.com/api/?key=5239248-c509b1ffda01e71efccc0caaa&per_page=200&q="+encodeURIComponent(search), {"callback":(res)=> {
@@ -38,7 +38,7 @@ class _PhotoContainer extends React.Component {
 		}
 		
 	    return (
-	      < PhotoComponent  items={this.props.items} handleSearch={this.handleSearch.bind(this)} photoSearch={this.props.photoSearch}
+	      < PhotoComponent  items={this.props.items} handleSearch={this.handleSearch} photoSearch={this.props.photoSearch}
 	        /> 
 	    )
 	  }

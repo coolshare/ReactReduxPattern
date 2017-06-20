@@ -12,14 +12,13 @@ class _LeftPane extends React.Component{
 		this.state = {
 			activeKey: '2'
 		};
-		this.handleSelect = this.handleSelect.bind(this)
 	}
-	handleink(pageId, e) {
+	handleink = (pageId, e) => {
 		e.preventDefault();
 		cs.store.dispatch({'type':'switchPage', 'pageId':pageId});
 	}
 
-	handleSelect(activeKey) {
+	handleSelect = (activeKey) => {
 	    this.setState({ activeKey });
 	  }
 	/**
