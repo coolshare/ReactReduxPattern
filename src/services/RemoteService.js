@@ -71,7 +71,7 @@ function _RemoteService(){
 		let result = {"type":type, "dataMap":{}, "multiType":"multi", "countDown":requests.length};
 		for (let i=0; i<requests.length; i++) {
 			let request = requests[i];
-			this.fetch(request.url, options, request.key, result, requests);
+			this.fetch(request.url, options, request.key, result, requests, requests.length);
 		}
 	}
 	

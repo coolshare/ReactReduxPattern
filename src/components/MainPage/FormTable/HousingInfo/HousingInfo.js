@@ -31,7 +31,7 @@ class _HousingInfo extends React.Component{
 	    let a = d.address;
 	    return {"address":a.street+", "+ [a.city, a.state, a.zipcode].join(" "), "value":d.zestimate.amount["#text"]+" "+d.zestimate.amount["@currency"], "link":d.links.homedetails}
 	  }
-	componentWillMount () {
+	componentDidMount () {
 		RemoteService.fatchThroughProxy("https://verdant.tchmachines.com/~coolsha/markqian/AngularJS/Directives/RoutedTab/data/House.json", {"callback":data=> {
 			cs.dispatch({"type":"LoadHousing", "data":data.properties.comparables});
 		}})
@@ -46,7 +46,7 @@ class _HousingInfo extends React.Component{
 			<div id="todoList" style={{backgroundColor:'#b0e0e6', minHeight:'500px', marginTop:'-10px', marginLeft:'-20px'}}>
 				{cs.isStackEmpty()?null:<div className="PopupHeader"><PopupCloseBox/><a onClick={this.handleTrading} style={{"cursor":"pointer", "float":"right", "marginRight":"50px"}}>Trading Info (Popup pattern demo)</a></div>}
 				
-				<h4>Housing Info</h4>
+				<h4 style={{"padding":"5px"}}>Housing Info</h4>
 				<div style={{minHeight:'250px'}}>
 					<ReactDataGrid
 			        columns={this._columns}
