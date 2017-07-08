@@ -19,7 +19,7 @@ Props and composition give you all the flexibility you need to customize a compo
 If you want to reuse non-UI functionality between components, we suggest extracting it into a separate JavaScript module. The components may import it and use that function, object, or a class, without extending it."<br/>
 <b>This is conclusion does not make sense at all</b>. One of the major goals of ES6 is to bring javascript to a higher level: object oriented. Object oriented is a needed pattern.<br/><br/> For example, when building series of gadgets for a portal, each gadget has the same html as header where min/max/close boxes are defined. In order to share that common html, we need a super class with the header html to by shared by all the sub classes (concrete gadgets). <br/><br/>Per the recommendation of the <a target=_blank href="https://facebook.github.io/react/docs/composition-vs-inheritance.html#containment">Facebook article</a> above, you need to have a super class, say Gadget, and a series of sub classes like GadgetOne, GadgetTwo, GadgetThree...as the following<br/>
 
-	  function Gadget(props) { 
+	  ```function Gadget(props) { 
 	  	return (
 			{props.children}
 		);
@@ -27,7 +27,7 @@ If you want to reuse non-UI functionality between components, we suggest extract
 	
 	function GadgetOne(props) { return (
 			...
-	  ); }
+	  ); }```
 	
 and HTML as the following
 
