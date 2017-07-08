@@ -19,13 +19,38 @@ Props and composition give you all the flexibility you need to customize a compo
 If you want to reuse non-UI functionality between components, we suggest extracting it into a separate JavaScript module. The components may import it and use that function, object, or a class, without extending it."<br/>
 <b>This is conclusion does not make sense at all</b>. One of the major goals of ES6 is to bring javascript to a higher level: object oriented. Object oriented is a needed pattern. For example, when building series of gadgets for a portal, each gadget has the same html as header where min/max/close boxes are defined. In order to share that common html, we need a super class with the header html to by shared by all the sub classes (concrete gadgets). Per the recommendation of the <a target=_blank href="https://facebook.github.io/react/docs/composition-vs-inheritance.html#containment">Facebook article</a> above, you need to have a super class, say Gadget, and a series of sub classes like GadgetOne, GadgetTwo, GadgetThree...as the following
 
-   function Gadget(props) {
-     return (<div><header />{props.children}</div>);
-   }
+	function Gadget(props) { 
+		return (
+			{props.children}
+		);
+	}
+	
+	function GadgetOne(props) { return (
+			...
+	); }
+	
+and HTML as the following
 
-   function GadgetOne(props) {
-     return (<div>...</div>);
-   }
+	<Gadget>
+	  <GadgetOne></GadgetOne>
+	</Gadget>
+	<Gadget>
+	  <GadgetTwo></GadgetTwo>
+	</Gadget>
+	<Gadget>
+	  <GadgetThree></GadgetThree>
+	</Gadget>
+
+What is the problem with this pattern?<br/>
+1). There are many redudant codes in html <br/>
+2). The HTML is not readable at all: you see a lot of "Gadget"s but they do not really mean anything<br/>
+3). Gaget is a super class which has nothing to do with concrete content: you never want to expose it. What if you have multiple super and are you going to do something like?<br/>
+	<SuperSuperGadget>
+	  <SuperGadget>
+	     <GadgetOne></GadgetOne>
+	  </SuperGadget>
+	</SuperSuperGadget>
+
 
 <br/><br/>
 	<b>Solution</b>: I wrote a wrapper, "subscribe" to hide the filtering within the wrapper and inject the action as a parameter. So you can simply subscribe as :<br/><br/>
