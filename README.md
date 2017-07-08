@@ -13,95 +13,11 @@ This package is designed to get you up and running as a comprehensive web applic
 Another major goal of this package is to illustrate commonly used patterns in a React application.
 I will first focus on some of the patterns I introduced for my own usage in my projects at work.
 Then I will list some commonly used ones. The patterns introduced and used by me:
- - <b>Inheritant of html</b><br/>
-	<b>Problem</b>: There is no a "nature way" to inherit html from a super class in React. <br/>And <a target=_blank href="https://facebook.github.io/react/docs/composition-vs-inheritance.html#containment">FaceBook even recommend</a> giving up inheritance at all:<br/><br/>"At Facebook, we use React in thousands of components, and <b>we haven't found any use cases where we would recommend creating component inheritance hierarchies</b>.
-Props and composition give you all the flexibility you need to customize a component's look and behavior in an explicit and safe way. Remember that components may accept arbitrary props, including primitive values, React elements, or functions.
-If you want to reuse non-UI functionality between components, we suggest extracting it into a separate JavaScript module. The components may import it and use that function, object, or a class, without extending it."<br/><br/>
-<b>This conclusion does not make sense at all</b>. One of the major goals of ES6 is to bring javascript to a higher level: object oriented. Object oriented is a needed pattern.<br/><br/> For example, when building series of gadgets for a portal, each gadget has the same html as header where min/max/close boxes are defined. In order to share that common html, we need a super class with the header html to by shared by all the sub classes (concrete gadgets). <br/><br/>Per the recommendation of the <a target=_blank href="https://facebook.github.io/react/docs/composition-vs-inheritance.html#containment">Facebook article</a> above, you need to have a parent class, say Gadget, and a series of child classes like GadgetOne, GadgetTwo, GadgetThree...as the following<br/>
-```
-	 function Gadget(props) { 
-	  	return (
-			{props.children}
-		);
-	  }
-	
-	function GadgetOne(props) { return (
-			...
-	  ); }
-```
 
-and HTML as the following
-
-	<Gadget>
-	  <GadgetOne></GadgetOne>
-	</Gadget>
-	<Gadget>
-	  <GadgetTwo></GadgetTwo>
-	</Gadget>
-	<Gadget>
-	  <GadgetThree></GadgetThree>
-	</Gadget>
-
-What is the problem with this pattern?<br/>
-1). There are many redudant codes in html <br/>
-2). The HTML is not readable at all: you see a lot of "Gadget"s but they do not really mean anything<br/>
-3). Gadget is a parent/abstract class which has nothing to do with concrete content: you never want to expose it. What if you have multiple parent/super class that your child gadget share features from and are you going to end up with something like?<br/>
-
-	<Super...SuperGadget>
-	  ...
-	  <SuperGadget>
-	     <GadgetOne></GadgetOne>
-	  </SuperGadget>
-	  ...
-	</Super...SuperGadget>
-
-The problem here is that the relation between Gadget and GadgetOne is not composition but inheritant.
-<br/><br/>
-	<b>Solution</b>: the inheritant is the key to fix the problem:<br/>
-	The super class:<br/>
-	
-	    export default class Gadget extends React.Component{
-	    renderHeader() {
-	        return (
-	            <div>header</div>
-	        )
-	    }
-	    renderMe() {
-	        return null;
-	    }
-	    render() {
-	        return (
-	            <div>
-	                {this.renderHeader()}
-	                {this.renderMe()}
-	            </div>
-	        )
-	    }
-	
-	  }
-	
-And the sub class:<br/>
-
-	import Gadget from '../../../../common/Gadget'
-	class GadgetOne extends Gadget{
-	    /**
-	    * render
-	    * @return {ReactElement} markup
-	    */
-	    renderMe(){
-	
-	        //...
-	        return (
-	            <div>    
-			//...
-	            </div>
-	        )
-	    }
-	}
-
-And HTML:</br>
-
-    <GadgetOne/>
+- <b>Loading components by string class name from json</b><br/>
+	<b>Problem</b>: In some case, you can not import your custom React classes statically since you don't have them. One example is a portal where users contribute their own gadgets after you release the portal application. When a new gadget is created by a user, two things are done:<br/> 1). the gadget class is placed in a location the application can reach. <br/>2). the location of the gadget class is added to the config file, gadgets.json.<br/>Now how to load it?
+	<br/><br/>
+	<b>Solution</b>: <br/>
 
 
 <br/><br/>
