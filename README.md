@@ -25,7 +25,7 @@ If you want to reuse non-UI functionality between components, we suggest extract
 		);
 	  }
 	
-	  function GadgetOne(props) { return (
+	function GadgetOne(props) { return (
 			...
 	  ); }
 	
