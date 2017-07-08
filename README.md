@@ -21,7 +21,7 @@ Then I will list some commonly used ones. The patterns introduced and used by me
 2). the location of the gadget class is added to the config file, gadgets.json.
 Now how to load it?
 
-<b>Solution</b>: 
+   <b>Solution</b>: 
 
 <br/><br/>
  - <b>Inheritant of html</b><br/>
