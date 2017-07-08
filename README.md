@@ -45,15 +45,37 @@ What is the problem with this pattern?<br/>
 1). There are many redudant codes in html <br/>
 2). The HTML is not readable at all: you see a lot of "Gadget"s but they do not really mean anything<br/>
 3). Gaget is a super class which has nothing to do with concrete content: you never want to expose it. What if you have multiple super and are you going to do something like?<br/>
+
 	<SuperSuperGadget>
 	  <SuperGadget>
 	     <GadgetOne></GadgetOne>
 	  </SuperGadget>
 	</SuperSuperGadget>
 
-
 <br/><br/>
-	<b>Solution</b>: I wrote a wrapper, "subscribe" to hide the filtering within the wrapper and inject the action as a parameter. So you can simply subscribe as :<br/><br/>
+	<b>Solution</b>: the inheritant is the key to fix the problem:<br/>
+	
+	    export default class Gadget extends React.Component{
+	    renderHeader() {
+	        return (
+	            <div>header</div>
+	        )
+	    }
+	    renderMe() {
+	        return null;
+	    }
+	    render() {
+	        return (
+	            <div>
+	                {this.renderHeader()}
+	                {this.renderMe()}
+	            </div>
+	        )
+	    }
+	
+	  }
+	
+	<br/><br/>
    
  - <b>Store Customization</b><br/>
    <b>Problem</b>: Access to the store and store related methods from anywhere is not easy and using many store related methods as-is does not meet our need. 
