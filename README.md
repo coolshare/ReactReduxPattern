@@ -45,14 +45,17 @@ and HTML as the following
 What is the problem with this pattern?<br/>
 1). There are many redudant codes in html <br/>
 2). The HTML is not readable at all: you see a lot of "Gadget"s but they do not really mean anything<br/>
-3). Gaget is a super class which has nothing to do with concrete content: you never want to expose it. What if you have multiple super and are you going to do something like?<br/>
+3). Gadget is a parent/abstract class which has nothing to do with concrete content: you never want to expose it. What if you have multiple parent/super class that your child gadget share features from and are you going to end up with something like?<br/>
 
-	<SuperSuperGadget>
+	<Super...SuperGadget>
+	  ...
 	  <SuperGadget>
 	     <GadgetOne></GadgetOne>
 	  </SuperGadget>
-	</SuperSuperGadget>
+	  ...
+	</Super...SuperGadget>
 
+The problem here is that the relation between Gadget and GadgetOne is not composition but inheritant.
 <br/><br/>
 	<b>Solution</b>: the inheritant is the key to fix the problem:<br/>
 	The super class:<br/>
