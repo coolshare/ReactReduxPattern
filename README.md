@@ -14,7 +14,7 @@ Another major goal of this package is to illustrate commonly used patterns in a 
 I will first focus on some of the patterns I introduced for my own usage in my projects at work.
 Then I will list some commonly used ones. The patterns introduced and used by me:
 
- - <b>Store Customization</b><br>
+ - <b>Store Customization</b><br/>
    <b>Problem</b>: Access to the store and store related methods from anywhere is not easy and using many store related methods as-is does not meet our need. 
    For example, we need a dispatch with callback but the as-is dispatch of Redux store
    does not provide that. We need a global access point to access store and store related methods.<br/><br/> 
@@ -31,7 +31,7 @@ Then I will list some commonly used ones. The patterns introduced and used by me
    <br/>See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a> and <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/index.js">/index.js</a>. 
    The CommunicationService will do a lot more that I will describe below. 
   
- - <b>Dispatch with callback</b><br>
+ - <b>Dispatch with callback</b><br/>
    <b>Problem</b>: dispatch of Redux store does not allow callback. This is not convenient since you sometimes want to write the handler in the same place
    of dispatching instead of somewhere else such as in a reducer.<br/><br/> 
    <b>Solution</b>: one key issue with this is that the callback has to be invoked after every handler including reduces and subscribers is done their jobs.
@@ -45,7 +45,7 @@ Then I will list some commonly used ones. The patterns introduced and used by me
  ```
    See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>,  <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/CommonReducer.js">/components/CommonReducer.js</a> and <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/CommonMiddleware.js">/components/CommonMiddleware.js</a>. 
    
- - <b>Popup Stack</b><br>
+ - <b>Popup Stack</b><br/>
    <b>Problem</b>: This is not a React specific issue. In your application, in many case to achieve a better user experience, you need to allow users 
    to jump into another point in the component hierarchy. If you simply route (deep linking programmatically or allow user to jump by clicking in some case) 
    to the point you may lost the current stay. The use may totally get lost after they finish the job in current stack level. So you need a state "Stack". 
@@ -61,8 +61,15 @@ Then I will list some commonly used ones. The patterns introduced and used by me
    ```
        cs.popup(MyComponent, "MyComponent");
    ```
+- <b>Inheritant of html</b><br/>
+	<b>Problem</b>: There is a "nature way" to inherit html from a super class. And <a target=_blank herf="https://facebook.github.io/react/docs/composition-vs-inheritance.html#containment">FaceBook even recommend give up "inheritance" at all</a>:"At Facebook, we use React in thousands of components, and we haven't found any use cases where we would recommend creating component inheritance hierarchies.
+
+Props and composition give you all the flexibility you need to customize a component's look and behavior in an explicit and safe way. Remember that components may accept arbitrary props, including primitive values, React elements, or functions.
+
+If you want to reuse non-UI functionality between components, we suggest extracting it into a separate JavaScript module. The components may import it and use that function, object, or a class, without extending it."<br/><br/>
+   <b>Solution</b>: I wrote a wrapper, "subscribe" to hide the filtering within the wrapper and inject the action as a parameter. So you can simply subscribe as :<br/><br/>
    
-- <b>Wrapper for Redux</b><br>
+- <b>Wrapper for Redux</b><br/>
    <b>Problem</b>: Redux does a simple pub/sub. All the reducers and subscribers will be invoke for any dispatching (This is really not efficient at all. I am wondering
    why they don't use type to map the listeners so that not all the listeners are called for each single action dispatching). 
    So you have to place if statement in all the subscribers to only let the corresponding invocation through. Another issue with Redux built-in subscribe is that
@@ -81,14 +88,14 @@ Then I will list some commonly used ones. The patterns introduced and used by me
    See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/services/CommunicationService.js">/services/CommunicationService.js</a>;<br/>
    Actually, cs.dispatch is another example of wrapper.   
    
-- <b>Dispatch as pub/sub</b><br>
+- <b>Dispatch as pub/sub</b><br/>
    <b>Problem</b>: In some case, you want to handle a dispatching in a variety of places/components instead of reducers, or you simply need a pub/sub communication that has nothing to do
    with saving anything in the store: you only want to let other parties know something happen (with data). But Redux's dispatch only deal with reducers and Redux never upates variables like 
    LastAction when Redux can not find a reducer. So you can not even identify that a dispatching is sent to whom in a subscriber (listener) since the action is never saved anywhere.
  of action. <br/><br/> 
    <b>Solution</b>: I add a middleware to collect the action before all the listeners are invoked and then use the collected action in the listeners. In this way, you can handle a dispatched action anywhere out side reducer.
    
-- <b>Dispatch and subscribe in HTML</b><br>
+- <b>Dispatch and subscribe in HTML</b><br/>
    <b>Problem</b>: Don't you feel so annoy about that you always need to write handlers to deal with users activity. In many cases, you really just like to trigger a dispatch with simple data
    or without data: you simply don't want to write a handler!<br/><br/> 
    <b>Solution</b>: I introduced two simple components to do communication in HTML: 
@@ -115,7 +122,7 @@ Then I will list some commonly used ones. The patterns introduced and used by me
    	To try this demo yourself, just select "React Patterns" at the top link. Than, select "Pubsub Pattern" at the left and have fun!
    	See code details at <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/common/Dispatcher.js">/common/Dispatcher.js</a>, <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/common/Subscriber.js">/common/Subscriber.js</a>, <a target=_blank href="https://github.com/coolshare/ReactReduxPattern/blob/master/src/components/Patterns/RightPane/Pubsub/PubsubComponent.js">/components/Patterns/RightPane/Pubsub/PubsubComponent.js</a><br/>	 
    
-- <b>Pub/sub Pattern</b><br> 
+- <b>Pub/sub Pattern</b><br/> 
   <b>Problem</b>: the major communication in Redux is that one party dispatches an action and listeners (reducers) receive the action and process it to impact views.
   But in a complicate application, you sometimes need more handy ways to communicate with other parties. For example, you want to simple publish (dispatch in term of Redux) a topic 
   (action in term of Redux) to subscribers (reducers in term of Redux) in JSX-html instead of defining a handler to dispatch for an UI activity. Or like I discuss in the previous
