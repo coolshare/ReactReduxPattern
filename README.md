@@ -16,7 +16,7 @@ Then I will list some commonly used ones. The patterns introduced and used by me
 
 
 - <b>Loading components by string class name from json</b><br/>
-<b>Problem</b>: In some case, you can not import your custom React classes statically since you don't have them. One example is a portal where users contribute their own gadgets after you release the portal application. When a new gadget is created by a user, two things are done:
+<b>Problem</b>: In some case, you can not import your custom React classes statically since you don't have them yet. One example is a portal where users contribute their own gadgets after you release the portal application. When a new gadget is created by a user, two things are done:
 1). the gadget class is placed in a location the application can reach.
 2). the location of the gadget class is added to the config file, gadgets.json.
 Now how to load it?
