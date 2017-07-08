@@ -14,7 +14,7 @@ Another major goal of this package is to illustrate commonly used patterns in a 
 I will first focus on some of the patterns I introduced for my own usage in my projects at work.
 Then I will list some commonly used ones. The patterns introduced and used by me:
  - <b>Inheritant of html</b><br/>
-	<b>Problem</b>: There is no a "nature way" to inherit html from a super class in React. And <a target=_blank herf="https://facebook.github.io/react/docs/composition-vs-inheritance.html#containment">FaceBook even recommend giving up "inheritance" at all</a>:"At Facebook, we use React in thousands of components, and we haven't found any use cases where we would recommend creating component inheritance hierarchies.
+	<b>Problem</b>: There is no a "nature way" to inherit html from a super class in React. And <a target=_blank herf="https://facebook.github.io/react/docs/composition-vs-inheritance.html#containment">FaceBook even recommend</a> giving up "inheritance" at all:"At Facebook, we use React in thousands of components, and we haven't found any use cases where we would recommend creating component inheritance hierarchies.
 Props and composition give you all the flexibility you need to customize a component's look and behavior in an explicit and safe way. Remember that components may accept arbitrary props, including primitive values, React elements, or functions.
 If you want to reuse non-UI functionality between components, we suggest extracting it into a separate JavaScript module. The components may import it and use that function, object, or a class, without extending it."<br/><br/>
 	<b>Solution</b>: I wrote a wrapper, "subscribe" to hide the filtering within the wrapper and inject the action as a parameter. So you can simply subscribe as :<br/><br/>
