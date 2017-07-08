@@ -96,7 +96,7 @@ And the sub class:<br/>
 	import Gadget from '../../../../common/Gadget'
 	class GadgetOne extends Gadget{
 	    /**
-	    * render
+	    * renderMe called in super
 	    * @return {ReactElement} markup
 	    */
 	    renderMe(){
