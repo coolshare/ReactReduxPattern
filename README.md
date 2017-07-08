@@ -61,14 +61,7 @@ Then I will list some commonly used ones. The patterns introduced and used by me
    ```
        cs.popup(MyComponent, "MyComponent");
    ```
-- <b>Inheritant of html</b><br/>
-	<b>Problem</b>: There is a "nature way" to inherit html from a super class. And <a target=_blank herf="https://facebook.github.io/react/docs/composition-vs-inheritance.html#containment">FaceBook even recommend give up "inheritance" at all</a>:"At Facebook, we use React in thousands of components, and we haven't found any use cases where we would recommend creating component inheritance hierarchies.
 
-Props and composition give you all the flexibility you need to customize a component's look and behavior in an explicit and safe way. Remember that components may accept arbitrary props, including primitive values, React elements, or functions.
-
-If you want to reuse non-UI functionality between components, we suggest extracting it into a separate JavaScript module. The components may import it and use that function, object, or a class, without extending it."<br/><br/>
-   <b>Solution</b>: I wrote a wrapper, "subscribe" to hide the filtering within the wrapper and inject the action as a parameter. So you can simply subscribe as :<br/><br/>
-   
 - <b>Wrapper for Redux</b><br/>
    <b>Problem</b>: Redux does a simple pub/sub. All the reducers and subscribers will be invoke for any dispatching (This is really not efficient at all. I am wondering
    why they don't use type to map the listeners so that not all the listeners are called for each single action dispatching). 
