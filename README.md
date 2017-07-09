@@ -125,7 +125,7 @@ Result:<br/><br/>
 <b>Problem</b>: In some case, you can not import your custom React classes statically since you don't have them yet. <br/>One example is a portal where users contribute their own gadgets after you release the portal application. When a new gadget is created by a user, two things are done:<br/><br/>
 1). the gadget class is placed in a location that the application can reach.<br/>
 2). the location of the gadget class is added to the config file, GadgetConfig.js<br/><br/>
-Now how to load it?
+Now how to load it, place it on a page and event inject some dynamic properties to it?
 
    <b>Solution</b>: here is the step to load and place into a page</br>
    1). import the config file GadgetConfig.js<br/>
