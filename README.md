@@ -54,7 +54,7 @@ and HTML as the following
 What is the problem with this pattern?<br/>
 1). There are many redundant codes in html <br/>
 2). The HTML is not readable at all: you see a lot of "Gadget"s but they do not really mean anything<br/>
-3). Gadget is a parent/abstract class which has nothing to do with concrete content: you never want to expose it. What if you have multiple parents class that your child gadget share features from and are you going to end up with something like?<br/>
+3). Gadget is a parent/abstract class which has nothing to do with concrete content: you never want to expose it. What if you have multiple parents class that your child gadgets share features from and are you going to end up with something like the following to represent a single gadget?<br/>
 
 	<Super...SuperGadget>
 	  ...
