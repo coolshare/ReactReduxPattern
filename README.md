@@ -21,9 +21,17 @@ If you want to reuse non-UI functionality between components, we suggest extract
 <b>This conclusion does not make sense at all</b>. One of the major goals of ES6 is to bring javascript to a higher level: object oriented. Object oriented is a needed pattern in many cases.<br/><br/> For example, when building series of gadgets for a portal, each gadget has the same html as header where min/max/close boxes are defined. In order to share that common html, we need a class with the header html to by shared by all the gadget classes (concrete gadgets). <br/><br/>Per the recommendation of the <a target=_blank href="https://facebook.github.io/react/docs/composition-vs-inheritance.html#containment">Facebook article</a> above, to use the composition pattern, you need to have a parent class, say Gadget, and a series of child classes like GadgetOne, GadgetTwo, GadgetThree...as the following<br/>
 ```
 	 function Gadget(props) { 
-	  	return (
-			{props.children}
-		);
+	 	renderHeader() {
+			//...
+		}
+		render() {
+			return (
+				<div>
+					{this.renderHeader()}
+					{props.children}
+				</div>
+			);
+		}
 	  }
 	
 	function GadgetOne(props) { return (
