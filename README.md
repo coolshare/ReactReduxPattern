@@ -115,7 +115,7 @@ Now how to load it?
    <b>Solution</b>: here is the step to load and place into a page</br>
    1). import the config file GadgetConfig.js<br/>
    
-   	import gadgetConfig from '../config/GadgetConfig' 
+   		import gadgetConfig from '../config/GadgetConfig' 
 	
 	<br/>where GadgetConfig.js contains<br/>
 	
