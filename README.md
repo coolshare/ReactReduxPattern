@@ -14,16 +14,6 @@ Another major goal of this package is to illustrate commonly used patterns in a 
 I will first focus on some of the patterns I introduced for my own usage in my projects at work.
 Then I will list some commonly used ones. The patterns introduced and used by me:
 
-
-- <b>Loading components by string class name from json</b><br/>
-<b>Problem</b>: In some case, you can not import your custom React classes statically since you don't have them yet. <br/>One example is a portal where users contribute their own gadgets after you release the portal application. When a new gadget is created by a user, two things are done:<br/><br/>
-1). the gadget class is placed in a location that the application can reach.<br/>
-2). the location of the gadget class is added to the config file, gadgets.json.<br/><br/>
-Now how to load it?
-
-   <b>Solution</b>: 
-
-<br/><br/>
  - <b>Inheritant of html</b><br/>
 	<b>Problem</b>: There is no a "nature way" to inherit html from a super class in React. <br/>And <a target=_blank href="https://facebook.github.io/react/docs/composition-vs-inheritance.html#containment">FaceBook even recommend</a> giving up inheritance at all:<br/><br/>"At Facebook, we use React in thousands of components, and <b>we haven't found any use cases where we would recommend creating component inheritance hierarchies</b>.
 Props and composition give you all the flexibility you need to customize a component's look and behavior in an explicit and safe way. Remember that components may accept arbitrary props, including primitive values, React elements, or functions.
@@ -116,7 +106,15 @@ And HTML:</br>
 
 
 <br/><br/>
-   
+- <b>Loading components by string class name from json</b><br/>
+<b>Problem</b>: In some case, you can not import your custom React classes statically since you don't have them yet. <br/>One example is a portal where users contribute their own gadgets after you release the portal application. When a new gadget is created by a user, two things are done:<br/><br/>
+1). the gadget class is placed in a location that the application can reach.<br/>
+2). the location of the gadget class is added to the config file, gadgets.json.<br/><br/>
+Now how to load it?
+
+   <b>Solution</b>: 
+
+<br/><br/>   
  - <b>Store Customization</b><br/>
    <b>Problem</b>: Access to the store and store related methods from anywhere is not easy and using many store related methods as-is does not meet our need. 
    For example, we need a dispatch with callback but the as-is dispatch of Redux store
