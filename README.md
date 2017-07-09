@@ -134,27 +134,27 @@ Now how to load it?
    
    2). import gadgets dynamically</br>
    
-   	for (let k in gadgetConfig) {
-		let g = cm.gadgetStateMap[k];
-		let type = require(g.path).default;
-		g.elem = React.createElement(type)
-	}
+		for (let k in gadgetConfig) {
+			let g = cm.gadgetStateMap[k];
+			let type = require(g.path).default;
+			g.elem = React.createElement(type)
+		}
 	
    3). Place the GadgetOne into a page and inject a property<br/>
    
-   	render(){
-		var self = this;
-		...
-		let elems = Object.keys(gadgetConfig).map((k, idx)=>{
-			let gadget = gadgets[k];
-			return (React.cloneElement(gadget.elem, {"key":idx, "myProps":self.props.myProps}))			
-		})
-		return (
-			<div>
-				{elems}
-			</div>
-		) 
-	   }
+		render(){
+			var self = this;
+			...
+			let elems = Object.keys(gadgetConfig).map((k, idx)=>{
+				let gadget = gadgets[k];
+				return (React.cloneElement(gadget.elem, {"key":idx, "myProps":self.props.myProps}))			
+			})
+			return (
+				<div>
+					{elems}
+				</div>
+			) 
+		   }
 <br/><br/>   
  - <b>Store Customization</b><br/>
    <b>Problem</b>: Access to the store and store related methods from anywhere is not easy and using many store related methods as-is does not meet our need. 
