@@ -72,7 +72,7 @@ The problem here is that the relation between Gadget and GadgetOne is not compos
 	    export default class Gadget extends React.Component{
 	    renderHeader() {
 	        return (
-	            <div>header</div>
+	            <div>...</div>
 	        )
 	    }
 	    renderMe() {
