@@ -135,7 +135,7 @@ Now how to load it?
    2). import gadgets dynamically</br>
    
 		for (let k in gadgetConfig) {
-			let g = cm.gadgetStateMap[k];
+			let g = cm.gadgetConfig[k];
 			let type = require(g.path).default;
 			g.elem = React.createElement(type)
 		}
