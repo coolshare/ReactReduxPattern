@@ -113,8 +113,11 @@ And HTML:</br>
 Now how to load it?
 
    <b>Solution</b>: here is the step to load and place into a page</br>
-   1). import the config file GadgetConfig.js
-   	import gadgetConfig from '../config/GadgetConfig' where GadgetConfig.js contains<br/>
+   1). import the config file GadgetConfig.js<br/>
+   
+   	import gadgetConfig from '../config/GadgetConfig' 
+	
+	<br/>where GadgetConfig.js contains<br/>
 	
 		export default const gadgetConfig = {
 		     "GadgetOne":{"name":"GadgetOne", "path":"../gadgets/GadgetOne", "state":"normal"},
