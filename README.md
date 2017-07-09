@@ -106,14 +106,52 @@ And HTML:</br>
 
 
 <br/><br/>
-- <b>Loading components by string class name from json</b><br/>
+- <b>Loading components by string class name from a config file</b><br/>
 <b>Problem</b>: In some case, you can not import your custom React classes statically since you don't have them yet. <br/>One example is a portal where users contribute their own gadgets after you release the portal application. When a new gadget is created by a user, two things are done:<br/><br/>
 1). the gadget class is placed in a location that the application can reach.<br/>
-2). the location of the gadget class is added to the config file, gadgets.json.<br/><br/>
+2). the location of the gadget class is added to the config file, GadgetConfig.js<br/><br/>
 Now how to load it?
 
-   <b>Solution</b>: 
-
+   <b>Solution</b>: here is the step to load and place into a page</br>
+   1). import the config file GadgetConfig.js
+   	import gadgetConfig from '../config/GadgetConfig' where GadgetConfig.js contains<br/>
+	
+		export default const gadgetConfig = {
+		     "GadgetOne":{"name":"GadgetOne", "path":"../gadgets/GadgetOne", "state":"normal"},
+		     "GadgetTwo":{"name":"GadgetTwo", "path":"../gadgets/GadgetTwo", "state":"normal"},
+		     ...
+		}
+	And the GadgetOne.js contains<br/>
+	
+		export default class GadgetOne extends React.Component{
+			render(){		
+				...
+			}
+		}
+   
+   2). import gadgets dynamically</br>
+   
+   	for (let k in gadgetConfig) {
+		let g = cm.gadgetStateMap[k];
+		let type = require(g.path).default;
+		g.elem = React.createElement(type)
+	}
+	
+   3). Place the GadgetOne into a page and inject a property<br/>
+   
+   	render(){
+		var self = this;
+		...
+		let elems = Object.keys(gadgetConfig).map((k, idx)=>{
+			let gadget = gadgets[k];
+			return (React.cloneElement(gadget.elem, {"key":idx, "myProps":self.props.myProps}))			
+		})
+		return (
+			<div>
+				{elems}
+			</div>
+		) 
+	   }
 <br/><br/>   
  - <b>Store Customization</b><br/>
    <b>Problem</b>: Access to the store and store related methods from anywhere is not easy and using many store related methods as-is does not meet our need. 
