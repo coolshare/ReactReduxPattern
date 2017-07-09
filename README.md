@@ -113,7 +113,13 @@ And HTML:</br>
     <GadgetOne/>
     <GadgetTwo/>
     <GadgetThree/>
-    
+Result:<br/><br/>
+  1). No redudant HTML codes<br/>
+  2). Very readable<br/>
+  3). The super class is hidden in HTML<br/>
+  
+
+
 <br/><br/>
 - <b>Loading components by string class name from a config file</b><br/>
 <b>Problem</b>: In some case, you can not import your custom React classes statically since you don't have them yet. <br/>One example is a portal where users contribute their own gadgets after you release the portal application. When a new gadget is created by a user, two things are done:<br/><br/>
