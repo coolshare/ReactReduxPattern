@@ -116,7 +116,7 @@ And HTML:</br>
 Result:<br/><br/>
   1). No redundant HTML codes<br/>
   2). Very readable<br/>
-  3). The super class is hidden in HTML<br/>
+  3). The super class is not expose in HTML<br/>
   
 
 
